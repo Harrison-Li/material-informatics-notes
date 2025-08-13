@@ -1,3 +1,3 @@
 > [!WARNING]
->
-> This notebook is an incomplete markdown conversion by LLMs from my hand written notes. So, the structure is unorganized, after finished all study, I will update it soon (Keep updating while study the quantum mechanics). 
+> Thanks for your interest, due to the difficulty of following QM knowlege and type in md at same time, I choose to use handwritten notes as my first version. But I will try to update it to markdown file if available. 
+> This notebook is an incomplete markdown conversion by LLMs from my hand written notes. So, the structure is unorganized and messy, after finished all study, I will update it soon (Keep updating while study the quantum mechanics). 
