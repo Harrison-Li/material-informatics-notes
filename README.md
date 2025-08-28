@@ -15,7 +15,7 @@ I'm currently learning **quantum mechanics** and exploring **high-throughput com
 - **Machine Learning Force Fields**
 - **AI for Quantum Chemistry (AIQC)**
 
-Fitting **wavefunctions** might be a good approach to balance **accuracy** and **computational cost**.
+Fitting **Force field** or  **Wave functions** might be a good approach to balance **accuracy** and **computational cost**.
 
 📌 I’ll continue to publish notes as I make progress.  
 

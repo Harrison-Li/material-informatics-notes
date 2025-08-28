@@ -27,7 +27,7 @@ MOSES or the GuacaMol
 
 ****
 
-![image-20240719152156793](/Users/harrison-li/Library/Application Support/typora-user-images/image-20240719152156793.png)
+![image-20240718211213841](assets/image-20240718211213841.png)
 
 Detailed tutorial can be seen in:  [Transformer.md](../ML/Transformer.md)  
 

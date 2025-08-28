@@ -1,5 +1,16 @@
 # GemNet: Universal Directional Graph Neural Networks for Molecules
 
+### Context: Spherical Harmonics
+
+Spherical harmonics $Y_l^m(\theta, \phi)$ appear as solutions to the **angular part** of Laplace’s equation in spherical coordinates.
+
+- l = **degree** (non-negative integer, like angular momentum quantum number)
+- m = **order** (integer related to projection/orientation)
+
+
+
+
+
 ## Motivation
 
 1. Regular GNNs are only as powerful as the 1-Weisfeiler Lehman test of isomorphism and thus cannot distinguish between certain molecules. Moreover, they require a large number of training samples to achieve good accuracy.
