@@ -27,9 +27,8 @@ $c_i^{(t)}$ is corresponding  to atom $i$ after $t$ steps updates.
 $$
 c_i^{(t+1)}=c_i^{(t)}+ \sum_{j\ne i}v_{ij}
 $$
-$v$ is the interaction, reflects the influence of atom j at a
+$v$ is the interaction, reflects the influence of atom j at a distance $D_{ij}$ on atom $i$.
 
-distance Dij on atom i.
 $$
 v_{ij}=\tanh{[W^{\text{fc}}(\,(W^\text{cf}c_j+b^{f_1})\circ (W^\text{df}\hat{d_{ij}}+b^{f_2}))]}
 $$
