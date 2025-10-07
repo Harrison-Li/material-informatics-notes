@@ -18,8 +18,8 @@ chapters:
       - file: ML/Denoising Diffusion Probabilistic Models
       - file: ML/Variational Inference with Normalizing Flows
       - file: ML/VAE
-        title: VAE (PDF)
-
+        title: VAE (PDF)   
+        
   - file: ML For Materials
     title: ML for Materials
     sections:
