@@ -1,0 +1,13 @@
+# Ignore all .log files
+*cpython*
+*.log
+*.pyc
+**/data/
+**/__pycache__/
+**.egg-info/
+
+# Ignore folders related to IDEs
+.vscode/
+
+# Ignore temporary files created by the operating system
+.DS_Store
