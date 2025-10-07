@@ -72,7 +72,11 @@ Due to the Markovian nature of the forward process, $q(x_t|x_{t-1},x_0)=q(x_t|x_
 
 For a multivariate Gaussian $\mathcal{N}(x;\mu;\Sigma)$, the PDF is proportional to $\exp{(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x - \mu))}$
 
+
+
 So, the exponent $E_1=-\frac{1}{2\beta_t}||(x_t-\sqrt{1-\beta_t}\,x_{t-1})||^2$, $E_2=-\frac{1}{2(1-\bar{a}_{t-1})}||(x_{t-1}-\sqrt{\bar{a}_{t-1}}\,x_0)||^2$, $E_3=-\frac{1}{2(1-\bar{a}_t)}||(x_t-\sqrt{\bar{a}_t}x_0)||^2$
+
+
 
 So, the exponent of $q(x_{t−1}∣x_t,x_0)$ is $E_1+E_2-E_3$, and we need to decompose and separate the quadric terms (e.g. $-\frac{1}{2}x_{t-1}^T\Sigma^{-1}x_{t-1}$) and the linear terms $x_{t-1}^T\Sigma^{-1}\mu$.
 
