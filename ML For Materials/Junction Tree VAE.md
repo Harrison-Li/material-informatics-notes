@@ -71,9 +71,11 @@ Decode a junction tree $\mathcal{T}$ from its encoding $\mathcal{z}_T$ with a tr
  a node receives information from other nodes in the current tree for making those predictions. The information is propagated through message vectors $h_{ij}$ when trees are incrementally constructed.
 
 Assume $\mathcal{E}= \{(i_1,j_1),···,(i_m,j_m)\}$ be the edges traversed in a depth first traversal over $\mathcal{T} = (\mathcal{V},\mathcal{E})$, and $m=2|\mathcal{E}|$ because each edge is traversed in both directions.
+{% raw %}
 $$
 \mathbf{h}_{i_t,j_t}=\textbf{GRU}(x_{i_t},\{{\mathbf{h}_{k,i_t}}\}_{(k,i_t)\in \mathcal{E_t},k\ne j_t})
 $$
+{% endraw %}
 **Topological Prediction** When the model visits node it, it makes a binary prediction on whether it still has children to be generated. We compute this probability by combining $\mathcal{z}_T$, node features $x_{i_t}$ and inward messages $h_{k,i_t}$ via a one hidden layer network followed by a sigmoid function to do the binary classification.
 $$
 p_t=\sigma(\mu^d \cdot \tau (W^d_1 x_{i_t} +W^d_2 \mathcal{z}_T+W^d_3 \sum_{(k,i_t)\in \mathcal{E_t}} h_{k,i_t})
