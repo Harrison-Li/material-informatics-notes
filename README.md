@@ -1,12 +1,20 @@
-# ML-for-Materials-notes
+# Computational Materials Science Notes
 
 My notes from studying **Machine Learning** with a **materials science** background as a beginner. These files mainly contain **theoretical knowledge** about AI and AI for materials.  
 🛠️ Practical code is still in progress (I'm working on it! 🥹)
 
-> [!NOTE]
->
-> All text is written in **Typora**. However, GitHub does **not support MathJax or KaTeX**, so some LaTeX formulas may not render correctly here.  
-> 👉 Please download the files to view them with proper formatting.
+## 📖 Read as a Web Book
+
+**🌐 [View the online book here](https://harrison-li.github.io/Computational-materials-notes/)**
+
+This repository is published as an interactive web-based book using Jupyter Book, with full support for:
+- ✨ Properly rendered LaTeX math equations
+- 🔍 Full-text search
+- 📱 Mobile-friendly responsive design
+- 🎨 Clean, readable interface
+
+> [!TIP]
+> The web version provides the best reading experience with proper math rendering and navigation!
 
 ## 🔄 Incoming Updates
 

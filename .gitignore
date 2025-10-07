@@ -11,3 +11,7 @@
 
 # Ignore temporary files created by the operating system
 .DS_Store
+
+# Jupyter Book build files
+_build/
+.jupyter_cache/
