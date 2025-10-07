@@ -20,9 +20,10 @@ chapters:
       - file: ML/VAE
         title: VAE (PDF)
 
-  - file: ML For Materials/Material informatics
+  - file: ML For Materials
     title: ML for Materials
     sections:
+      - file: ML For Materials//Material informatics
       - file: ML For Materials/Deep tensor neural network (DTNN)
       - file: ML For Materials/GemNet Universal Directional Graph Neural Networks for Molecules
       - file: ML For Materials/Junction Tree VAE
@@ -31,9 +32,10 @@ chapters:
       - file: ML For Materials/MolGAN An implicit generative model for small molecular graphs
       - file: ML For Materials/MolGPT
 
-  - file: Atomic simulation of materials/Lecture 2
+  - file: Atomic simulation of materials/README
     title: Atomic Simulation of Materials
     sections:
+      - file: Atomic simulation of materials/Lecture 2
       - file: Atomic simulation of materials/Lecture 3
       - file: Atomic simulation of materials/Lecture 4
       - file: Atomic simulation of materials/Lecture 8
@@ -58,8 +60,9 @@ chapters:
         title: Pandas - Indexing/Selecting (PDF)
       - file: Python/Data visualization
 
-  - file: Agent/Agent architectures
+  - file: Agent/README
     title: AI Agents
     sections:
       - file: Agent/Langgraph
       - file: Agent/Prompt Templates
+      - file: Agent/Agent architectures
