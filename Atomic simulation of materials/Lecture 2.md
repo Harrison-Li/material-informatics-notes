@@ -169,7 +169,7 @@ $$
 
 It's not possible to theoretically derive $E_\text{repulsion}(x_\text{MN})$ form, but it is only required that it goes toward zero as x (the interatomic distance) goes to infinity.
 
-Lennard-Jones ($\text{LJ}$) potential satisfy these properties,  where the repulsive part is given by an $x^{−12}$ dependence and $C_1$ and $C_2$ are fitted constants.
+**Lennard-Jones ($\text{LJ}$) potential** satisfy these properties,  where the repulsive part is given by an $x^{−12}$ dependence and $C_1$ and $C_2$ are fitted constants.
 $$
 E_\text{vdW}(x_\text{MN})=\frac{C_1}{x_\text{MN}^{12}}-\frac{C_2}{x_\text{MN}^6}
 $$
