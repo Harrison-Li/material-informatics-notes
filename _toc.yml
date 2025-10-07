@@ -1,0 +1,55 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README
+chapters:
+  - file: ML/README
+    title: Machine Learning
+    sections:
+      - file: ML/Introduction to machine learning
+      - file: ML/Introduction to Deep learning
+      - file: ML/Applied math
+      - file: ML/Loss function
+      - file: ML/Dimensionality Reduction
+      - file: ML/Sequence model
+      - file: ML/Transformer
+      - file: ML/Transfer learning
+      - file: ML/Denoising Diffusion Probabilistic Models
+      - file: ML/Variational Inference with Normalizing Flows
+
+  - file: ML For Materials/Material informatics
+    title: ML for Materials
+    sections:
+      - file: ML For Materials/Deep tensor neural network (DTNN)
+      - file: ML For Materials/GemNet Universal Directional Graph Neural Networks for Molecules
+      - file: ML For Materials/Junction Tree VAE
+      - file: ML For Materials/MolGAN An implicit generative model for small molecular graphs
+      - file: ML For Materials/MolGPT
+
+  - file: Atomic simulation of materials/Lecture 2
+    title: Atomic Simulation of Materials
+    sections:
+      - file: Atomic simulation of materials/Lecture 3
+      - file: Atomic simulation of materials/Lecture 4
+      - file: Atomic simulation of materials/Lecture 8
+      - file: Atomic simulation of materials/Hartree-Fock
+
+  - file: Quantum Mechanics/README
+    title: Quantum Mechanics
+    sections:
+      - file: Quantum Mechanics/Quantum Mechanics notes
+
+  - file: Python/Readme
+    title: Python Programming
+    sections:
+      - file: Python/Python Tutorial
+      - file: Python/Coding Practices
+      - file: Python/Pandas
+      - file: Python/Data visualization
+
+  - file: Agent/Agent architectures
+    title: AI Agents
+    sections:
+      - file: Agent/Langgraph
+      - file: Agent/Prompt Templates
