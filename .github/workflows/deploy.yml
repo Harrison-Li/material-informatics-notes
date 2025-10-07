@@ -36,6 +36,7 @@ jobs:
         run: |
           pip install -U jupyter-book
           pip install ghp-import
+          pip install sphinx-proof
 
       - name: Build the book
         run: |

@@ -17,6 +17,8 @@ chapters:
       - file: ML/Transfer learning
       - file: ML/Denoising Diffusion Probabilistic Models
       - file: ML/Variational Inference with Normalizing Flows
+      - file: ML/VAE
+        title: VAE (PDF)
 
   - file: ML For Materials/Material informatics
     title: ML for Materials
@@ -24,6 +26,8 @@ chapters:
       - file: ML For Materials/Deep tensor neural network (DTNN)
       - file: ML For Materials/GemNet Universal Directional Graph Neural Networks for Molecules
       - file: ML For Materials/Junction Tree VAE
+      - file: ML For Materials/JT-VAE_handwritten_derivation_view
+        title: JT-VAE Derivation (PDF)
       - file: ML For Materials/MolGAN An implicit generative model for small molecular graphs
       - file: ML For Materials/MolGPT
 
@@ -39,6 +43,8 @@ chapters:
     title: Quantum Mechanics
     sections:
       - file: Quantum Mechanics/Quantum Mechanics notes
+      - file: Quantum Mechanics/Handwritten_version_view
+        title: Handwritten Notes (PDF)
 
   - file: Python/Readme
     title: Python Programming
@@ -46,6 +52,10 @@ chapters:
       - file: Python/Python Tutorial
       - file: Python/Coding Practices
       - file: Python/Pandas
+      - file: Python/creating-reading-and-writing_view
+        title: Pandas - Creating/Reading/Writing (PDF)
+      - file: Python/indexing-selecting-assigning_view
+        title: Pandas - Indexing/Selecting (PDF)
       - file: Python/Data visualization
 
   - file: Agent/Agent architectures
