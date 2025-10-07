@@ -46,6 +46,7 @@ parse:
     - smartquotes
     - substitution
     - tasklist
+  myst_dmath_double_inline: true
 
 sphinx:
   extra_extensions:
@@ -64,5 +65,14 @@ sphinx:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     mathjax3_config:
       tex:
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        processEscapes: true
+        processEnvironments: true
+      options:
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      loader:
+        load: ['[tex]/ams', '[tex]/boldsymbol', '[tex]/mathtools']
+      tex2jax:
         inlineMath: [['$', '$'], ['\\(', '\\)']]
         displayMath: [['$$', '$$'], ['\\[', '\\]']]
