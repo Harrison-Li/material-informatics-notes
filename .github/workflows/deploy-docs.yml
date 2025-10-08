@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -e .[sphinx]
-          pip install sphinx-book-theme sphinx-design sphinx-autodoc2 sphinx-copybutton sphinxext-rediraffe sphinxext-opengraph sphinx-pyscript sphinx-tippy sphinx-togglebutton matplotlib
+          pip install sphinx-book-theme sphinx-design sphinx-autodoc2 sphinx-copybutton sphinxext-rediraffe sphinxext-opengraph sphinx-pyscript sphinx-tippy sphinx-togglebutton matplotlib linkify-it-py
       
       - name: Build Sphinx documentation
         run: |
