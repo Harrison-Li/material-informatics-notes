@@ -148,8 +148,7 @@ myst_substitutions = {
 # -- HTML output -------------------------------------------------
 
 html_theme = "sphinx_book_theme"
-html_logo = "_static/logo-wide.svg"
-html_favicon = "_static/logo-square.svg"
+html_logo = "_static/paradigm.jpeg"
 html_title = ""
 html_theme_options = {
     "home_page_in_toc": True,
