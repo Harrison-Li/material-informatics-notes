@@ -62,6 +62,26 @@ ML For Materials/MolGPT.md
 
 ```{toctree}
 :hidden:
+:caption: Quantum mechanics
+Quantum Mechanics/Handwritten_version_view.md
+Quantum Mechanics/Handwritten_version.pdf
+```
+
+
+```{toctree}
+:hidden:
+:caption: Atomic simulation
+Atomic simulation of materials
+Atomic simulation of materials/Hartree-Fock.md
+Atomic simulation of materials/Lecture 2.md
+Atomic simulation of materials/Lecture 3.md
+Atomic simulation of materials/Lecture 4.md
+Atomic simulation of materials/Lecture 8.md
+Atomic simulation of materials/Untitled.md
+```
+
+```{toctree}
+:hidden:
 :caption: Python
 Python/Coding Practices.md
 Python/creating-reading-and-writing_view.md
