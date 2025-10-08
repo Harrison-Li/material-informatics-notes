@@ -21,8 +21,10 @@ kramdown:
 defaults:
   - scope:
       path: ""
+      type: "pages"
     values:
       layout: page
+      render_with_liquid: false
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
