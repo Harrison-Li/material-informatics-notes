@@ -156,19 +156,10 @@ Python/Python Tutorial.md
 ```
 
 [commonmark]: https://commonmark.org/
-[github-ci]: https://github.com/executablebooks/MyST-Parser/workflows/continuous-integration/badge.svg?branch=master
-[github-link]: https://github.com/executablebooks/MyST-Parser
-[codecov-badge]: https://codecov.io/gh/executablebooks/MyST-Parser/branch/master/graph/badge.svg
-[codecov-link]: https://codecov.io/gh/executablebooks/MyST-Parser
-[rtd-badge]: https://readthedocs.org/projects/myst-parser/badge/?version=latest
-[rtd-link]: https://myst-parser.readthedocs.io/en/latest/?badge=latest
-[black-badge]: https://img.shields.io/badge/code%20style-black-000000.svg
-[pypi-badge]: https://img.shields.io/pypi/v/myst-parser.svg
-[pypi-link]: https://pypi.org/project/myst-parser
-[conda-badge]: https://anaconda.org/conda-forge/myst-parser/badges/version.svg
-[conda-link]: https://anaconda.org/conda-forge/myst-parser
-[black-link]: https://github.com/ambv/black
-[github-badge]: https://img.shields.io/github/stars/executablebooks/myst-parser?label=github
+[github-ci]: https://github.com/Harrison-Li/Computational-materials-notes/workflows/continuous-integration/badge.svg?branch=main
+[github-link]: https://github.com/Harrison-Li/Computational-materials-notes
+[github-badge]: https://img.shields.io/github/stars/Harrison-Li/Computational-materials-notes?label=github
+[site-link]: https://harrison-li.github.io/Computational-materials-notes/
 [markdown-it-py]: https://markdown-it-py.readthedocs.io/
 [markdown-it]: https://markdown-it.github.io/
 [rst-to-myst]: https://rst-to-myst.readthedocs.io
