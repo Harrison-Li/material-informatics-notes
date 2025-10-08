@@ -1,0 +1,61 @@
+<document source="index.md">
+    <paragraph>
+        output with 
+        <emphasis>
+            Markdown
+         
+        nested substitution
+    <paragraph>
+        prefix
+    <note>
+        <paragraph>
+            A note 
+            nested substitution
+    <paragraph>
+        a 
+        - text
+         b
+    <paragraph>
+        c 
+        output with 
+        <emphasis>
+            Markdown
+         
+        nested substitution
+        
+         d
+    <paragraph>
+        e 
+        <note>
+            <paragraph>
+                Inline note
+         f
+    <paragraph>
+        This was from the conf
+    <paragraph>
+        Overridden by front matter
+    <paragraph>
+        This will process the substitution
+    <literal_block xml:space="preserve">
+        output with 
+        <emphasis>
+            Markdown
+         
+        nested substitution
+        
+    <paragraph>
+        This will not process the substitution
+    <literal_block language="python" xml:space="preserve">
+        {{ text_with_nest }}
+    <paragraph>
+        Using env and filters:
+    <paragraph>
+        INDEX
+    <compound classes="toctree-wrapper">
+        <toctree caption="True" entries="(None,\ 'other')" glob="False" hidden="False" includefiles="other" includehidden="False" maxdepth="-1" numbered="0" parent="index" rawentries="" titlesonly="False">
+    <paragraph>
+        Jan 01, 2020
+    <paragraph>
+        item1
+    <paragraph>
+        value1

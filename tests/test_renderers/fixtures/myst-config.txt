@@ -1,0 +1,529 @@
+[suppress-warnings] --myst-suppress-warnings="myst.header"
+.
+# A
+### B
+.
+<document ids="a" names="a" source="<string>" title="A">
+    <title>
+        A
+    <subtitle ids="b" names="b">
+        B
+.
+
+[title-to-header] --myst-title-to-header="yes"
+.
+---
+title: "The title *nested syntax*"
+---
+
+# Other header
+.
+<document source="<string>">
+    <docinfo>
+        <field classes="title">
+            <field_name>
+                title
+            <field_body>
+                <paragraph>
+                    <literal>
+                        The title *nested syntax*
+    <section ids="the-title-nested-syntax" names="the\ title\ nested\ syntax">
+        <title>
+            The title
+            <emphasis>
+                nested syntax
+    <section ids="other-header" names="other\ header">
+        <title>
+            Other header
+.
+
+[linkify] --myst-enable-extensions=linkify
+.
+www.example.com
+.
+<document source="<string>">
+    <paragraph>
+        <reference refuri="http://www.example.com">
+            www.example.com
+.
+
+[gfm-strikethrough] --myst-gfm-only="yes"
+.
+~~strike~~
+.
+<document source="<string>">
+    <paragraph>
+        <system_message level="2" line="1" source="<string>" type="WARNING">
+            <paragraph>
+                Strikethrough is currently only supported in HTML output [myst.strikethrough]
+        <raw format="html" xml:space="preserve">
+            <s>
+        strike
+        <raw format="html" xml:space="preserve">
+            </s>
+
+<string>:1: (WARNING/2) Strikethrough is currently only supported in HTML output [myst.strikethrough]
+.
+
+[gfm-disallowed-html] --myst-gfm-only="yes"
+.
+<strong> <title> <style> <em>
+
+<blockquote>
+  <xmp> is disallowed.  <XMP> is also disallowed.
+</blockquote>
+.
+<document source="<string>">
+    <paragraph>
+        <raw format="html" xml:space="preserve">
+            <strong>
+
+        <raw format="html" xml:space="preserve">
+            &lt;title>
+
+        <raw format="html" xml:space="preserve">
+            &lt;style>
+
+        <raw format="html" xml:space="preserve">
+            <em>
+    <raw format="html" xml:space="preserve">
+        <blockquote>
+          &lt;xmp> is disallowed.  &lt;XMP> is also disallowed.
+        </blockquote>
+.
+
+[gfm-autolink] --myst-gfm-only="yes"
+.
+www.commonmark.org
+
+Visit www.commonmark.org/help for more information.
+
+www.google.com/search?q=Markup+(business)
+
+www.google.com/search?q=Markup+(business)))
+
+(www.google.com/search?q=Markup+(business))
+
+(www.google.com/search?q=Markup+(business)
+
+www.google.com/search?q=(business))+ok
+
+www.google.com/search?q=commonmark&hl=en
+
+www.google.com/search?q=commonmark&hl;
+
+www.commonmark.org/he<lp
+.
+<document source="<string>">
+    <paragraph>
+        <reference refuri="http://www.commonmark.org">
+            www.commonmark.org
+    <paragraph>
+        Visit
+        <reference refuri="http://www.commonmark.org/help">
+            www.commonmark.org/help
+         for more information.
+    <paragraph>
+        <reference refuri="http://www.google.com/search?q=Markup+(business)">
+            www.google.com/search?q=Markup+(business)
+    <paragraph>
+        <reference refuri="http://www.google.com/search?q=Markup+(business)">
+            www.google.com/search?q=Markup+(business)
+        ))
+    <paragraph>
+        (
+        <reference refuri="http://www.google.com/search?q=Markup+(business)">
+            www.google.com/search?q=Markup+(business)
+        )
+    <paragraph>
+        (
+        <reference refuri="http://www.google.com/search?q=Markup+(business)">
+            www.google.com/search?q=Markup+(business)
+    <paragraph>
+        <reference refuri="http://www.google.com/search?q=(business)">
+            www.google.com/search?q=(business)
+        )+ok
+    <paragraph>
+        <reference refuri="http://www.google.com/search?q=commonmark&amp;hl=en">
+            www.google.com/search?q=commonmark&hl=en
+    <paragraph>
+        <reference refuri="http://www.google.com/search?q=commonmark&amp;hl">
+            www.google.com/search?q=commonmark&hl
+        ;
+    <paragraph>
+        <reference refuri="http://www.commonmark.org/he">
+            www.commonmark.org/he
+        <lp
+.
+
+[tasklist] --myst-enable-extensions=tasklist --myst-enable-checkboxes="true"
+.
+- [ ] a
+- [x] b
+.
+<document source="<string>">
+    <bullet_list bullet="-" classes="contains-task-list">
+        <list_item classes="task-list-item enabled">
+            <paragraph>
+                <raw format="html" xml:space="preserve">
+                    <input class="task-list-item-checkbox"  type="checkbox">
+                 a
+        <list_item classes="task-list-item enabled">
+            <paragraph>
+                <raw format="html" xml:space="preserve">
+                    <input class="task-list-item-checkbox" checked="checked"  type="checkbox">
+                 b
+.
+
+[url_schemes] --myst-url-schemes="{'ab': null, 'cd': '{{path}}', 'ef': {'url': 'https://{{path}}#{{fragment}}', 'title': 'My {{query}}', 'classes': ['xyz']}}"
+.
+<ab:xyz> <cd:xyz> <ef:xyz?text#other>
+.
+<document source="<string>">
+    <paragraph>
+        <reference refuri="ab:xyz">
+            ab:xyz
+
+        <reference refuri="xyz">
+            cd:xyz
+
+        <reference classes="xyz" refuri="https://xyz#other">
+            My text
+.
+
+[url_schemes_list] --myst-url-schemes=ab
+.
+[](ab:c) [](http:c)
+.
+<document source="<string>">
+    <paragraph>
+        <reference refuri="ab:c">
+
+        <problematic ids="problematic-1" refid="system-message-1">
+    <section classes="system-messages">
+        <title>
+            Docutils System Messages
+        <system_message backrefs="problematic-1" ids="system-message-1" level="3" line="1" source="<string>" type="ERROR">
+            <paragraph>
+                Unknown target name: "http:c".
+
+<string>:1: (ERROR/3) Unknown target name: "http:c".
+.
+
+[heading_anchors] --myst-heading-anchors=1
+.
+# My title
+[](#my-title)
+.
+<document ids="my-title" names="my\ title" slug="my-title" source="<string>" title="My title">
+    <title>
+        My title
+    <paragraph>
+        <reference id_link="True" refid="my-title">
+            <inline classes="std std-ref">
+                My title
+.
+
+[html_meta] --myst-html-meta='{"keywords": "Sphinx, MyST"}'
+.
+text
+.
+<document source="<string>">
+    <meta content="Sphinx, MyST" name="keywords">
+    <paragraph>
+        text
+.
+
+[substitutions] --myst-enable-extensions=substitution --myst-substitutions='{"a": "b", "c": "d", "e": "{{f}}", "f": "{{e}}"}'
+.
+{{a}} {{c}} {{x}} {{e}}
+.
+<document source="<string>">
+    <paragraph>
+        b
+
+        d
+
+        <system_message level="2" line="1" source="<string>" type="WARNING">
+            <paragraph>
+                Substitution error:UndefinedError: 'x' is undefined [myst.substitution]
+
+        <system_message level="2" line="3" source="<string>" type="WARNING">
+            <paragraph>
+                circular substitution reference: {'e'} [myst.substitution]
+
+<string>:1: (WARNING/2) Substitution error:UndefinedError: 'x' is undefined [myst.substitution]
+<string>:3: (WARNING/2) circular substitution reference: {'e'} [myst.substitution]
+.
+
+[attrs_image] --myst-enable-extensions=attrs_image
+.
+a
+.
+<document source="<string>">
+    <paragraph>
+        a
+
+<string>:: (WARNING/2) The `attrs_image` extension is deprecated, please use `attrs_inline` instead. [myst.deprecated]
+.
+
+[attrs_inline_span] --myst-enable-extensions=attrs_inline
+.
+[content]{#id .a .b}
+.
+<document source="<string>">
+    <paragraph>
+        <inline classes="a b" ids="id" names="id">
+            content
+.
+
+[attrs_inline_code] --myst-enable-extensions=attrs_inline
+.
+`content`{#id .a .b language=python}
+.
+<document source="<string>">
+    <paragraph>
+        <literal classes="a b code" ids="id" language="python" names="id">
+            content
+.
+
+[attrs_inline_links] --myst-enable-extensions=attrs_inline
+.
+<https://example.com>{.a .b}
+
+[hi](abc){.external}
+
+(other)=
+[text1](https://example.com){#id1 .a .b}
+
+[text2](other){#id2 .c .d}
+
+[ref]{#id3 .e .f}
+
+[ref]: https://example.com
+
+[text3](https://example.com){target="g"}
+
+[text4](https://example.com){rel="h"}
+.
+<document source="<string>">
+    <paragraph>
+        <reference classes="a b" refuri="https://example.com">
+            https://example.com
+    <paragraph>
+        <reference classes="external" refuri="abc">
+            hi
+    <target refid="other">
+    <paragraph ids="other" names="other">
+        <reference classes="a b" ids="id1" names="id1" refuri="https://example.com">
+            text1
+    <paragraph>
+        <reference classes="c d" ids="id2" names="id2" refid="other">
+            text2
+    <paragraph>
+        <reference classes="e f" ids="id3" names="id3" refuri="https://example.com">
+            ref
+    <paragraph>
+        <reference refuri="https://example.com" target="g">
+            text3
+    <paragraph>
+        <reference refuri="https://example.com" rel="h">
+            text4
+.
+
+[attrs_inline_image] --myst-enable-extensions=attrs_inline
+.
+![a](b){#id .a width="100%" align=center height=20px}{.b}
+.
+<document source="<string>">
+    <paragraph>
+        <image align="center" alt="a" classes="a b" height="20px" ids="id" names="id" uri="b" width="100%">
+.
+
+[attrs_inline_image_warnings] --myst-enable-extensions=attrs_inline
+.
+![a](b){width=1x height=2x align=other }
+.
+<document source="<string>">
+    <paragraph>
+        <image alt="a" uri="b">
+            <system_message level="2" line="1" source="<string>" type="WARNING">
+                <paragraph>
+                    Invalid 'width' attribute value: '1x' [myst.attribute]
+            <system_message level="2" line="1" source="<string>" type="WARNING">
+                <paragraph>
+                    Invalid 'height' attribute value: '2x' [myst.attribute]
+            <system_message level="2" line="1" source="<string>" type="WARNING">
+                <paragraph>
+                    Invalid 'align' attribute value: 'other' [myst.attribute]
+
+<string>:1: (WARNING/2) Invalid 'width' attribute value: '1x' [myst.attribute]
+<string>:1: (WARNING/2) Invalid 'height' attribute value: '2x' [myst.attribute]
+<string>:1: (WARNING/2) Invalid 'align' attribute value: 'other' [myst.attribute]
+.
+
+[attrs_block] --myst-enable-extensions=attrs_block
+.
+{#myid1 .class1 .class2}
+{#myid2 .class3}
+My paragraph
+
+{attribution="Chris Sewell"}
+> Hallo
+.
+<document source="<string>">
+    <paragraph classes="class1 class2 class3" ids="myid2" names="myid2">
+        My paragraph
+    <block_quote>
+        <paragraph>
+            Hallo
+        <attribution>
+            Chris Sewell
+.
+
+[inv_link]
+.
+<inv:#index>
+[](inv:#index)
+[*explicit*](inv:#index)
+<inv:key#index>
+[](inv:key#index)
+<inv:key:std:label#search>
+[](inv:key:std:label#search)
+<inv:#in*>
+[](inv:#in*)
+<inv:key:*:doc#index>
+[](inv:key:*:doc#index)
+.
+<document source="<string>">
+    <paragraph>
+        <reference internal="False" inv_match="key:std:doc:index" reftitle="Python" refuri="https://example.com/index.html">
+            Title
+
+        <reference internal="False" inv_match="key:std:doc:index" reftitle="Python" refuri="https://example.com/index.html">
+            Title
+
+        <reference internal="False" inv_match="key:std:doc:index" reftitle="Python" refuri="https://example.com/index.html">
+            <emphasis>
+                explicit
+
+        <reference internal="False" inv_match="key:std:doc:index" reftitle="Python" refuri="https://example.com/index.html">
+            Title
+
+        <reference internal="False" inv_match="key:std:doc:index" reftitle="Python" refuri="https://example.com/index.html">
+            Title
+
+        <reference internal="False" inv_match="key:std:label:search" reftitle="Python" refuri="https://example.com/search.html">
+            Search Page
+
+        <reference internal="False" inv_match="key:std:label:search" reftitle="Python" refuri="https://example.com/search.html">
+            Search Page
+
+        <reference internal="False" inv_match="key:std:doc:index" reftitle="Python" refuri="https://example.com/index.html">
+            Title
+
+        <reference internal="False" inv_match="key:std:doc:index" reftitle="Python" refuri="https://example.com/index.html">
+            Title
+
+        <reference internal="False" inv_match="key:std:doc:index" reftitle="Python" refuri="https://example.com/index.html">
+            Title
+
+        <reference internal="False" inv_match="key:std:doc:index" reftitle="Python" refuri="https://example.com/index.html">
+            Title
+.
+
+[inv_link_error]
+.
+<inv:#other>
+
+<inv:*:*:*#*index>
+.
+<document source="<string>">
+    <paragraph>
+        <system_message level="2" line="1" source="<string>" type="WARNING">
+            <paragraph>
+                No matches for '*:*:*:other' [myst.iref_missing]
+    <paragraph>
+        <system_message level="2" line="3" source="<string>" type="WARNING">
+            <paragraph>
+                Multiple matches for '*:*:*:*index': key:std:label:genindex, key:std:label:modindex, key:std:label:py-modindex, ... [myst.iref_ambiguous]
+        <reference internal="False" inv_match="key:std:label:genindex" reftitle="Python" refuri="https://example.com/genindex.html">
+            Index
+
+<string>:1: (WARNING/2) No matches for '*:*:*:other' [myst.iref_missing]
+<string>:3: (WARNING/2) Multiple matches for '*:*:*:*index': key:std:label:genindex, key:std:label:modindex, key:std:label:py-modindex, ... [myst.iref_ambiguous]
+.
+
+[heading_slug_func] --myst-heading-anchors=2 --myst-heading-slug-func=myst_parser.config.main._test_slug_func
+.
+# title
+
+## title
+
+## title a b c
+
+## title *nested syntax*
+
+### other
+
+[reversed](#eltit)
+.
+<document dupnames="title" ids="title" slug="eltit" source="<string>" title="title">
+    <title>
+        title
+    <section dupnames="title" ids="title-1" slug="eltit-1">
+        <title>
+            title
+    <section ids="title-a-b-c" names="title\ a\ b\ c" slug="c b a eltit">
+        <title>
+            title a b c
+    <section ids="title-nested-syntax" names="title\ nested\ syntax" slug="xatnys detsen eltit">
+        <title>
+            title
+            <emphasis>
+                nested syntax
+        <section ids="other" names="other">
+            <title>
+                other
+            <paragraph>
+                <reference id_link="True" refid="title">
+                    reversed
+.
+
+[fence_as_directive] --myst-fence-as-directive=unknown,admonition --myst-enable-extensions=attrs_block
+.
+```unknown
+```
+
+{#myname .class1}
+{a=b}
+```admonition title
+content
+```
+.
+<document source="<string>">
+    <system_message level="2" line="1" source="<string>" type="WARNING">
+        <paragraph>
+            Unknown directive type: 'unknown' [myst.directive_unknown]
+    <system_message level="2" line="6" source="<string>" type="WARNING">
+        <paragraph>
+            'admonition': Unknown option keys: ['a'] (allowed: ['class', 'name']) [myst.directive_option]
+    <admonition classes="class1" ids="myname" names="myname">
+        <title>
+            title
+        <paragraph>
+            content
+
+<string>:1: (WARNING/2) Unknown directive type: 'unknown' [myst.directive_unknown]
+<string>:6: (WARNING/2) 'admonition': Unknown option keys: ['a'] (allowed: ['class', 'name']) [myst.directive_option]
+.
+
+[links-external-new-tab] --myst-links-external-new-tab="true"
+.
+[text](https://example.com)
+.
+<document source="<string>">
+    <paragraph>
+        <reference refuri="https://example.com" rel="noreferer noopener" target="_blank">
+            text
+.

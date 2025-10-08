@@ -1,0 +1,8 @@
+<document source="root/index.md">
+    <paragraph>
+        <reference refid="ref">
+            <literal classes="xref myst">
+                ref
+
+
+<src>/index.md:1: WARNING: 'myst' cross-reference target not found: 'ref' [myst.xref_missing]

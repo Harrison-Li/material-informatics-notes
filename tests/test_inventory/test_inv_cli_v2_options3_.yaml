@@ -1,0 +1,9 @@
+name: Python
+version: ''
+base_url: null
+objects:
+  std:
+    label:
+      ref:
+        loc: index.html#ref
+        text: Title

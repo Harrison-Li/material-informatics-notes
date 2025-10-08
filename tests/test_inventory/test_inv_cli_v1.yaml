@@ -1,0 +1,13 @@
+name: foo
+version: '1.0'
+base_url: null
+objects:
+  py:
+    module:
+      module:
+        loc: foo.html#module-module
+        text: null
+    class:
+      module.cls:
+        loc: foo.html#module.cls
+        text: null

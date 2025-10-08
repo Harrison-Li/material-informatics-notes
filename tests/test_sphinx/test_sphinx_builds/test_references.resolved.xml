@@ -1,0 +1,159 @@
+<document source="index.md">
+    <target refid="title">
+    <section classes="tex2jax_ignore mathjax_ignore" ids="title-with-nested-a-1 title" names="title\ with\ nested\ a=1 title" slug="title-with-nested-">
+        <title>
+            Title with 
+            <strong>
+                nested
+             
+            <math>
+                a=1
+        <paragraph>
+            <reference refuri="https://example.com">
+        <paragraph>
+            <reference refuri="https://example.com">
+                plain text
+        <paragraph>
+            <reference refuri="https://example.com">
+                nested 
+                <emphasis>
+                    syntax
+        <paragraph>
+            <reference internal="True" refid="title">
+                <inline classes="std std-ref">
+                    Title with nested a=1
+        <paragraph>
+            <reference internal="True" refid="title">
+                <inline classes="std std-ref">
+                    plain text
+        <paragraph>
+            <reference internal="True" refid="title">
+                <inline classes="std std-ref">
+                    nested 
+                    <emphasis>
+                        syntax
+        <paragraph>
+            <reference internal="True" refuri="">
+                <inline classes="std std-doc">
+                    Title with nested a=1
+        <paragraph>
+            <reference internal="True" refuri="">
+                <inline classes="std std-doc">
+                    plain text
+        <paragraph>
+            <reference internal="True" refuri="">
+                <inline classes="std std-doc">
+                    nested 
+                    <emphasis>
+                        syntax
+        <paragraph>
+            <download_reference filename="ab0d698fdd2b6a81c34b5ed380fe6f61/file_link.txt" refdoc="index" refdomain="True" refexplicit="True" reftarget="file_link.txt" reftype="myst">
+                <inline classes="xref download myst">
+                    download 
+                    <strong>
+                        link
+        <paragraph>
+            <download_reference filename="1952147a8403903cb78cecf56f049085/file_link2.txt" refdoc="index" refdomain="True" refexplicit="False" reftarget="subfolder/file_link2.txt" reftype="myst">
+                <literal classes="xref download myst">
+                    subfolder/file_link2.txt
+        <target refid="insidecodeblock">
+        <paragraph ids="insidecodeblock" names="insidecodeblock">
+            I am inside the eval-rst fence
+        <paragraph>
+            Referencing the 
+            <reference internal="True" refid="title">
+                <inline classes="std std-ref">
+                    Title with nested a=1
+        <paragraph>
+            Still inside the codeblock 
+            <reference name="insidecodeblock" refid="insidecodeblock">
+                insidecodeblock
+        <paragraph>
+            I am outside the 
+            <reference internal="True" refid="insidecodeblock">
+                <inline classes="std std-ref">
+                    fence
+        <section ids="title-anchors" names="title\ anchors" slug="title-anchors">
+            <title>
+                Title 
+                <emphasis>
+                    anchors
+            <compound classes="toctree-wrapper">
+                <compact_paragraph toctree="True">
+                    <bullet_list>
+                        <list_item classes="toctree-l1">
+                            <compact_paragraph classes="toctree-l1">
+                                <reference anchorname="" internal="True" refuri="other.html">
+                                    Title 
+                                    <emphasis>
+                                        anchors
+                        <list_item classes="toctree-l1">
+                            <compact_paragraph classes="toctree-l1">
+                                <reference anchorname="" internal="True" refuri="subfolder/other2.html">
+                                    Title 
+                                    <emphasis>
+                                        anchors
+            <paragraph>
+                <reference id_link="True" refid="title-anchors">
+                    <inline classes="std std-ref">
+                        Title anchors
+            <paragraph>
+                <reference id_link="True" refid="title-anchors">
+                    <inline classes="std std-ref">
+                        Title anchors
+            <paragraph>
+                <reference internal="True" refuri="other.html#title-anchors">
+                    <inline classes="std std-ref">
+                        Title anchors
+            <paragraph>
+                <reference internal="True" refuri="other.html#title-anchors">
+                    <inline classes="std std-ref">
+                        Title anchors
+            <paragraph>
+                <reference internal="True" refuri="subfolder/other2.html#title-anchors">
+                    <inline classes="std std-ref">
+                        Title anchors
+    <section classes="tex2jax_ignore mathjax_ignore" ids="intersphinx-via" names="intersphinx\ via\ #" slug="intersphinx-via-">
+        <title>
+            Intersphinx via 
+            <literal>
+                #
+        <paragraph>
+            Unknown 
+            <reference refid="unknown">
+                <literal classes="xref myst">
+                    unknown
+        <paragraph>
+            Unknown explicit 
+            <reference refid="unknown">
+                <inline classes="xref myst">
+                    <strong>
+                        hallo
+        <paragraph>
+            Known no title 
+            <reference internal="False" reftitle="Example 0.0.1" refuri="https://example.com/index.html#paragraph-target">
+                <literal classes="iref myst">
+                    paragraph-target
+        <paragraph>
+            Known explicit 
+            <reference internal="False" reftitle="Example 0.0.1" refuri="https://example.com/index.html#paragraph-target">
+                <inline classes="xref myst">
+                    <strong>
+                        hallo
+        <paragraph>
+            Known with title 
+            <reference internal="False" reftitle="Example 0.0.1" refuri="https://example.com/index.html#title-target">
+                <inline classes="iref myst">
+                    Title
+        <paragraph>
+            Ambiguous 
+            <reference internal="False" reftitle="Example 0.0.1" refuri="https://example.com/index.html#module-duplicate">
+                <literal classes="iref myst">
+                    duplicate
+    <section classes="tex2jax_ignore mathjax_ignore" ids="image-in-title" names="image\ in\ title" slug="image-in-title-">
+        <title>
+            Image in title 
+            <image alt="badge" candidates="{'?': 'https://shields.io/or/something.svg'}" uri="https://shields.io/or/something.svg">
+        <paragraph>
+            <reference id_link="True" refid="image-in-title">
+                link up

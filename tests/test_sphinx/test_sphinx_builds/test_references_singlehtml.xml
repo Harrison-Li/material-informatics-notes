@@ -1,0 +1,18 @@
+<document source="other.md">
+    <section ids="other-title" names="other\ title" slug="other-title">
+        <title>
+            Other Title
+        <paragraph>
+            <pending_xref refdoc="other/other" refdomain="std" refexplicit="False" reftarget="other2" reftype="doc" refwarn="True">
+                <inline classes="xref std std-doc">
+                    other2
+        <paragraph>
+            <pending_xref refdoc="other/other" refdomain="" refexplicit="False" reftarget="other2" reftype="any" refwarn="True">
+                <literal classes="xref any">
+                    other2
+        <paragraph>
+            <pending_xref refdoc="other/other" refdomain="doc" refexplicit="False" reftarget="other/other2" reftargetid="True" reftype="myst">
+                <inline classes="xref myst">
+        <paragraph>
+            <pending_xref refdoc="other/other" refdomain="doc" refexplicit="False" reftarget="index" reftargetid="title" reftype="myst">
+                <inline classes="xref myst">

@@ -1,0 +1,321 @@
+note: content in first line only
+.
+```{note} a
+```
+.
+arguments: []
+body:
+- a
+content_offset: 0
+options: {}
+warnings: []
+.
+
+note: content in body only
+.
+```{note}
+a
+```
+.
+arguments: []
+body:
+- a
+content_offset: 0
+options: {}
+warnings: []
+.
+
+note: content in first line and body
+.
+```{note} a
+b
+```
+.
+arguments: []
+body:
+- a
+- b
+content_offset: 0
+options: {}
+warnings: []
+.
+
+note: content after option
+.
+```{note}
+:class: name
+a
+```
+.
+arguments: []
+body:
+- a
+content_offset: 1
+options:
+  class:
+  - name
+warnings: []
+.
+
+note: comment in option
+.
+```{note}
+:class: name  # oops
+a
+```
+.
+arguments: []
+body:
+- a
+content_offset: 1
+options:
+  class:
+  - name
+warnings:
+- 'ParseWarnings(msg=''Directive options has # comments, which may not be supported
+  in future versions.'', lineno=0, type=<MystWarnings.DIRECTIVE_OPTION_COMMENTS: ''directive_comments''>)'
+.
+
+note: content after option with new line
+.
+```{note}
+:class: name
+
+a
+```
+.
+arguments: []
+body:
+- a
+content_offset: 2
+options:
+  class:
+  - name
+warnings: []
+.
+
+note: content after yaml option
+.
+```{note}
+---
+class: name
+---
+a
+```
+.
+arguments: []
+body:
+- a
+content_offset: 3
+options:
+  class:
+  - name
+warnings: []
+.
+
+note: content in first line and body
+.
+```{note} first line
+:class: tip
+
+body line
+```
+.
+arguments: []
+body:
+- first line
+- ''
+- body line
+content_offset: 0
+options:
+  class:
+  - tip
+warnings:
+- 'ParseWarnings(msg=''Splitting content across first line and body, when an options
+  block is present, is not recommended'', lineno=None, type=<MystWarnings.DIRECTIVE_PARSING:
+  ''directive_parse''>)'
+.
+
+admonition: no options, no new line
+.
+```{admonition} first line
+body line
+```
+.
+arguments:
+- first line
+body:
+- body line
+content_offset: 0
+options: {}
+warnings: []
+.
+
+admonition: no options, new line
+.
+```{admonition} first line
+
+body line
+```
+.
+arguments:
+- first line
+body:
+- body line
+content_offset: 1
+options: {}
+warnings: []
+.
+
+admonition: with options
+.
+```{admonition} first line
+:class: tip
+
+body line
+```
+.
+arguments:
+- first line
+body:
+- body line
+content_offset: 2
+options:
+  class:
+  - tip
+warnings: []
+.
+
+warning: bad yaml
+.
+```{note}
+---
+a: {
+---
+```
+.
+arguments: []
+body: []
+content_offset: 3
+options: {}
+warnings:
+- 'ParseWarnings(msg="Unknown option keys: [''a''] (allowed: [''class'', ''name''])",
+  lineno=1, type=<MystWarnings.DIRECTIVE_OPTION: ''directive_option''>)'
+.
+
+warning: yaml not a dict
+.
+```{note}
+---
+a
+---
+```
+.
+arguments: []
+body: []
+content_offset: 3
+options: {}
+warnings:
+- 'ParseWarnings(msg="Invalid options format: expected '':'' after key", lineno=1,
+  type=<MystWarnings.DIRECTIVE_OPTION: ''directive_option''>)'
+.
+
+warning: unknown option name
+.
+```{note}
+:unknown: name
+```
+.
+arguments: []
+body: []
+content_offset: 1
+options: {}
+warnings:
+- 'ParseWarnings(msg="Unknown option keys: [''unknown''] (allowed: [''class'', ''name''])",
+  lineno=0, type=<MystWarnings.DIRECTIVE_OPTION: ''directive_option''>)'
+.
+
+warning: invalid option value
+.
+```{note}
+:class: 1
+```
+.
+arguments: []
+body: []
+content_offset: 1
+options: {}
+warnings:
+- 'ParseWarnings(msg=''Invalid option value for \''class\'': 1: cannot make "1" into
+  a class name'', lineno=0, type=<MystWarnings.DIRECTIVE_OPTION: ''directive_option''>)'
+.
+
+error: missing argument
+.
+```{admonition}
+```
+.
+error: 1 argument(s) required, 0 supplied
+.
+
+indented_options
+.
+```{note}
+  :class: name
+
+body
+```
+.
+arguments: []
+body:
+- body
+content_offset: 2
+options:
+  class:
+  - name
+warnings: []
+.
+
+option_flags_std
+.
+```{code-block}
+:linenos:
+:lineno-start: 2
+:force:
+
+body
+```
+.
+arguments: []
+body:
+- body
+content_offset: 4
+options:
+  force: null
+  lineno-start: 2
+  linenos: null
+warnings: []
+.
+
+option_flags_delimited
+.
+```{code-block}
+---
+linenos:
+lineno-start: 2
+force:
+---
+
+body
+```
+.
+arguments: []
+body:
+- body
+content_offset: 6
+options:
+  force: null
+  lineno-start: 2
+  linenos: null
+warnings: []
+.
