@@ -12,9 +12,9 @@ from myst_parser import __version__
 
 # -- Project information -----------------------------------------------------
 
-project = "MyST Parser"
-copyright = f"{date.today().year}, Executable Book Project"
-author = "Executable Book Project"
+project = "Computational materials notes"
+copyright = f"{date.today().year}, Harrison Li"
+author = "Harrison Li"
 version = __version__
 
 master_doc = "index"
