@@ -31,15 +31,6 @@ Fitting **Force field** or  **Wave functions** might be a good approach to balan
 
 💡 Also looking for advice and feedback from the community! 🥰
 
-```{button-ref} live-preview
-:ref-type: doc
-:color: secondary
-:class: sd-rounded-pill
-
-Live Demo
-```
-````
-
 ---
 
 ```{toctree}
