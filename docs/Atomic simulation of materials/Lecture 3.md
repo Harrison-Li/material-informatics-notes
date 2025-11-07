@@ -2,7 +2,7 @@
 
 ## **Embedded Atom model (EAM)**
 
- Previous parts explain many ways to express parts of modern force fields (and interatomic potentials), however, they are based on describe the fields, which is limited by the system of molecules and crystals. While failed to describe the metallic systems.  So, to trigger the root, force fields always require the underlying definition of bonds.
+ Previous parts explain many ways to express parts of modern force fields (and interatomic potentials), however, they are based on **bonds** to describe the fields, which is limited by the system of molecules and crystals. While failed to describe the metallic systems (electron cloud with no directional bonding).  So, to trigger the root, force fields always require the underlying definition of bonds.
 $$
 p_i = \sum_{i\ne j}f_i(x_i-x_j)
 $$
