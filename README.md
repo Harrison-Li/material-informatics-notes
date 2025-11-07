@@ -18,12 +18,7 @@ This repository is published as an interactive web-based book using Jupyter Book
 
 ## 🔄 Incoming Updates
 
-I'm currently learning **quantum mechanics** and exploring **high-throughput computational methods** to calculate material properties more accurately. I'm also trying to understand:
-
-- **Machine Learning Force Fields**
-- **AI for Quantum Chemistry (AIQC)**
-
-Fitting **Force field** or  **Wave functions** might be a good approach to balance **accuracy** and **computational cost**.
+Recently, I have learned Quantum mechanics and Atomic simulation like DFT, etc. I will update it soon. Also, hoping to update the some fanscinating papers and some knowlege about the intersection between Computational Chemistry and AI.
 
 📌 I’ll continue to publish notes as I make progress.  
 
