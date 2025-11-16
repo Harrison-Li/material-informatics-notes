@@ -1,4 +1,4 @@
-# Lecture 3
+# Force Field 2
 
 ## **Embedded Atom model (EAM)**
 

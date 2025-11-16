@@ -1,4 +1,4 @@
-# Lecture 5
+# Many-electron system
 
 **Eigenvalues are orthonormal**
 
