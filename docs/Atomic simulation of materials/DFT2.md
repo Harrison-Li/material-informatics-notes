@@ -1,4 +1,4 @@
-# Lecture 9
+# DFT2
 
 ### Quick recap of DFT
 
