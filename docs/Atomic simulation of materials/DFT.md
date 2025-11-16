@@ -1,4 +1,4 @@
-# Lecture 8
+# DFT
 
 **Electron density $\mathbf{\rho(r)}$**
 

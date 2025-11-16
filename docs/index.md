@@ -51,13 +51,15 @@ ML/Transfer learning.md
 ```{toctree}
 :hidden:
 :caption: ML for Materials
-ML For Materials/Deep tensor neural network (DTNN).md
-ML For Materials/GemNet Universal Directional Graph Neural Networks for Molecules.md
 ML For Materials/JT-VAE_handwritten_derivation_view.md
 ML For Materials/Junction Tree VAE.md
 ML For Materials/Material informatics.md
 ML For Materials/MolGAN An implicit generative model for small molecular graphs.md
 ML For Materials/MolGPT.md
+ML For Materials/SchNet.md
+ML For Materials/Deep tensor neural network (DTNN).md
+ML For Materials/GemNet Universal Directional Graph Neural Networks for Molecules.md
+ML For Materials/MACE.md
 ```
 
 ```{toctree}
@@ -71,13 +73,14 @@ Quantum Mechanics/Handwritten_version.pdf
 ```{toctree}
 :hidden:
 :caption: Atomic simulation
-Atomic simulation of materials
+Atomic simulation of materials/Force field1.md
+Atomic simulation of materials/Force field2.md
+Atomic simulation of materials/Introduction to quantum mechanics.md
+Atomic simulation of materials/Muti-electron system.md
 Atomic simulation of materials/Hartree-Fock.md
-Atomic simulation of materials/Lecture 2.md
-Atomic simulation of materials/Lecture 3.md
-Atomic simulation of materials/Lecture 4.md
-Atomic simulation of materials/Lecture 8.md
-Atomic simulation of materials/Untitled.md
+Atomic simulation of materials/DFT.md
+Atomic simulation of materials/DFT2.md
+Atomic simulation of materials/DFT in solids.md
 ```
 
 ```{toctree}
@@ -90,6 +93,15 @@ Python/indexing-selecting-assigning_view.md
 Python/Pandas.md
 Python/Python Tutorial.md
 ```
+
+```{toctree}
+:hidden:
+:caption: Agent
+Agent/Agent architectures.md
+Agent/Langgraph.md
+Agent/Langgraph.md
+```
+
 
 [commonmark]: https://commonmark.org/
 [github-ci]: https://github.com/Harrison-Li/Computational-materials-notes/workflows/continuous-integration/badge.svg?branch=main
