@@ -64,7 +64,7 @@ Previous section describes how to represent multi-electron system into density f
 
 The actual density functional theory calculations are performed on the auxiliary single-electron independent-particle system defined by the mono-electronic auxiliary hamiltonian $\hat{H}_\text{aux}$, also known as the Kohn-Sham operator $\hat{F}_\text{KS}$ in $a.u.:^2$
 $$
-\hat{H}_\text{aux}=\hat{F}_\text{KS}=-\frac{1}{2}\grad^2+V_\text{eff}(r)
+\hat{H}_\text{aux}=\hat{F}_\text{KS}=-\frac{1}{2}\nabla^2+V_\text{eff}(r)
 $$
 
 \[

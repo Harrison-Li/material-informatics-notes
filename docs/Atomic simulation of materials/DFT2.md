@@ -15,7 +15,7 @@
 
 **Kohn-Sham auxiliary system:**
 
-$\hat{H}_\text{aux}=\hat{F}_\text{KS}=-\frac{1}{2}\grad^2+V_\text{eff}(\vec{r})$
+$\hat{H}_\text{aux}=\hat{F}_\text{KS}=-\frac{1}{2}\nabla^2+V_\text{eff}(\vec{r})$
 
 ------
 
@@ -39,7 +39,7 @@ Again, the unknown term is $E_{\mathrm{xc}}[\rho]$. Similarly as what we done in
 Recall that, variational principle $\theta_i(r)\rightarrow \delta \theta_i(r), \delta \text{ is the variation factor}$ 
 $$
 \hat{F}^\text{KS}\theta_i(r_1)=\epsilon \theta_i (r_1)\\
--\frac{1}{2}\grad_1^2 +
+-\frac{1}{2}\nabla_1^2 + V_\text{eff}(r_1)
 $$
 
 
@@ -87,6 +87,22 @@ $$
 $$
 **Generalized Gradient Approximation (GGA)**
 $$
-E_\text{xc}^\text{GGA}=\int f(\rho, \grad\rho)dr
+E_\text{xc}^\text{GGA}=\int f(\rho, \nabla\rho)dr
 $$
 The gradient itself It's more like adding a Tylor expansion, the LDA method is the zero order of the series, while the gradient behaves as polynomials, making it more close the to value.
+
+**Meta-GGA**
+Rung-3 functional on Jacob’s ladder of DFT. It improves over GGA by using additional **semilocal** information about the electron density:
+$$
+E_\text{xc}^\text{meta-GGA} = \int f(\rho,\nabla \rho, \nabla^2 \rho,\tau)
+$$
+
+- $\tau = \frac{1}{2}\sum_i|\nabla\psi_i|^2 \rightarrow$ kinetic-energy density
+
+Kinetic energy density physical meanings:
+
+It is large where orbitals oscillate rapidly (e.g. core, bonding), small where density is smooth.
+
+1. **bonding type** (metallic, ionic, covalent)
+2. **iso-orbital regions** (single-orbital like H atom)
+3. **weak interactions** (vdW regions)

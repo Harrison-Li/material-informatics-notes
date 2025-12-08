@@ -13,7 +13,7 @@ For two electron integral:  $\epsilon_i=\int\mathcal{X_1}^*(x_1)\mathcal{X_2}^*(
 **Energy contribution**
 
 - Coulomb: $J =\int\mathcal{X_1}^*(x_1)\mathcal{X_2}^*(x_2)\frac{1}{|r_{12}|}\mathcal{X_1}(x_1)\mathcal{X_2}(x_2)dx_1dx_2 = \int|\mathcal{X_1}(x_1)^2|\frac{1}{r_{12}}|\mathcal{X_2}(x_2)^2|dx_1dx_2$
-- Exchange: $K =$
+- Exchange: $K =\int\mathcal{X_1}^*(x_1)\mathcal{X_2}^*(x_2)\frac{1}{|r_{12}|}\mathcal{X_1}(x_2)\mathcal{X_2}(x_1)dx_1dx_2 $
 
 
 

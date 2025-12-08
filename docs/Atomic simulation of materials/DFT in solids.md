@@ -4,7 +4,7 @@
 
 **1. Kohn-sham equation (Auxiliary method)**
 $$
-(-\frac{1}{2}\grad + \underset{V_{eff}(\vec{r_1})}{\underbrace{{V_{ne} +V_H+V_{xc}}}})\, \theta_i (\vec{r_1}) = \epsilon_i \theta_i(\vec{r_i})
+(-\frac{1}{2}\nabla + \underset{V_{eff}(\vec{r_1})}{\underbrace{{V_{ne} +V_H+V_{xc}}}})\, \theta_i (\vec{r_1}) = \epsilon_i \theta_i(\vec{r_i})
 $$
 **2. SCF Loop**
 
@@ -20,9 +20,9 @@ e.g. VWN, PZ, PWQ, SPZ
 
 Effective but over-binding
 
-- **GGA:** add $\grad \rho(\vec{r})$ (Non-homogeneity)
+- **GGA:** add $\nabla \rho(\vec{r})$ (Non-homogeneity)
 
-$E_\text{xc}^\text{GGA} = \int f(\rho,\grad \rho)d\vec{r}= E_\text{x}^\text{GGA}(\rho) +E_\text{c}^\text{GGA}(\rho)$
+$E_\text{xc}^\text{GGA} = \int f(\rho,\nabla \rho)d\vec{r}= E_\text{x}^\text{GGA}(\rho) +E_\text{c}^\text{GGA}(\rho)$
 
 e.g. PBE, BLYP, ...
 
