@@ -22,10 +22,8 @@ This repository is published as an interactive web-based book using Jupyter Book
 
 I'm currently learning **quantum mechanics** and exploring **high-throughput computational methods** to calculate material properties more accurately. I'm also trying to understand:
 
-- **Machine Learning Force Fields**
+- **Machine Learning Interatomic Potential (MLIP)**
 - **AI for Quantum Chemistry (AIQC)**
-
-Fitting **Force field** or  **Wave functions** might be a good approach to balance **accuracy** and **computational cost**.
 
 📌 I’ll continue to publish notes as I make progress.  
 
