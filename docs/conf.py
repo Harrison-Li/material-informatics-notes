@@ -176,10 +176,12 @@ ogp_custom_meta_tags = [
 html_static_path = ["_static"]
 html_css_files = ["local.css"]
 html_extra_path = [
-    "ML",  # PDFs and other assets under docs/ML
-    "ML For Materials",  # PDFs under docs/ML For Materials
-    "Quantum Mechanics",
-    "Python",
+    # Copy specific PDFs so HTML links/iframes work on GitHub Pages
+    "ML/VAE.pdf",
+    "ML For Materials/JT-VAE_handwritten_derivation.pdf",
+    "Quantum Mechanics/Handwritten_version.pdf",
+    "Python/creating-reading-and-writing.pdf",
+    "Python/indexing-selecting-assigning.pdf",
 ]
 
 rediraffe_redirects = {
