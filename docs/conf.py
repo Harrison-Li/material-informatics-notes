@@ -175,6 +175,12 @@ ogp_custom_meta_tags = [
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 html_css_files = ["local.css"]
+html_extra_path = [
+    "ML",  # PDFs and other assets under docs/ML
+    "ML For Materials",  # PDFs under docs/ML For Materials
+    "Quantum Mechanics",
+    "Python",
+]
 
 rediraffe_redirects = {
     "using/intro.md": "sphinx/intro.md",

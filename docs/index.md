@@ -1,5 +1,3 @@
-sd_hide_title: true
-
 # Computational Materials Science Notes
 
 My notes from studying **Machine Learning** with a **materials science** background as a beginner. These files mainly contain **theoretical knowledge** about AI and AI for materials.  
