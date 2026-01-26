@@ -150,7 +150,7 @@ Normalize the contribution of each variable in order to measure only how much th
 
 ## 3.6. Common Probability Distributions
 
-### 3.6.1. Bernoulli Distribution
+### 3.6.1. 
 
 The **Bernoulli distribution **is a distribution over a single binary random variable. It is controlled by a single parameter φ∈[0,1], which gives the probability of the random variable being equal to 1. It has the following properties:
 

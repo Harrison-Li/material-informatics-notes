@@ -33,7 +33,7 @@ Detailed tutorial can be seen in:  [Transformer.md](../ML/Transformer.md)
 
 ## Training Procedure and Evaluation Metrics
 
-Model is trained for 10 epochs using the Adam optimizer with a learning rate of $6 × 10^{−4}$.
+Model is trained for 10 epochs using the Adam optimizer with a learning rate of $6 \times 10^{-4}$.
 
 **Evaluation metrics :**
 

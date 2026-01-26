@@ -168,7 +168,7 @@ This operation is called convolution. The convolution operation is typically den
 $$
 s(t)=(x*w)(t)
 $$
-In our example, w needs to be a valid probability density function, or the output will not be a weighted average. Also, w needs to be 0 for all negative arguments, or it will look into the future, which is presumably beyond our capabilities.
+In our example, $w$ needs to be a valid probability density function, or the output will not be a weighted average. Also, w needs to be 0 for all negative arguments, or it will look into the future, which is presumably beyond our capabilities.
 
 In convolutional network terminology, the first argument (in this example, the function $x$) to the convolution is often referred to as the **input**, and the second argument (in this example, the function $w$) as the **kernel**. The output is sometimes referred to as the **feature map.**
 
@@ -180,6 +180,18 @@ s(t)=(I*K)(i,j)=\sum_m\sum_n I(m,n)K(i-m,j-n)\\
 \text{Convolution is commutative, meaning we can equivalently write:}\\
 s(t)=(I*K)(i,j)=\sum_m\sum_n I(i-m,j-n)K(m,n)
 $$
+> [!Tip]
+>
+> Proof of commutative
+>
+> $(f*g)(x) = \int f(t)g(t-x)dt \Rightarrow \mu = x-t$
+>
+> $(f*g)(x) = \int f(x-\mu)g(-\mu)d(-\mu)\\=\int f(x-\mu)g(\mu)d\mu \\= \int g(\mu)f(x-\mu)d\mu$
+>
+> So, $(f*g)(x)= (g*f)(x)$
+
+
+
  Many neural network libraries implement a related function called the cross-correlation, which is the same as convolution but without flipping the kernel:
 $$
 S(t)=(I*K)(i,j)=\sum_m\sum_nI(i+m,j+n)K(m,n)
@@ -194,13 +206,45 @@ Convolution leverages three important ideas that can help improve a machine lear
 
 - **Sparse interactions**
 
-- **Parameter sharing** 
-- **Equivariant**
+Suppose for full connected dense neuron network, we have $m$ inputs and $n$ outputs, the matrix multiplication requires $m\times n$ parameters, and the algorithms used in practice have $O(m\times n)$ runtime. 
+
+If we limit the kernel (the number of connections each output) to $k$, such sparse connections only requires $k\times n$ parameters and $O(k\times n)$ runtime.
 
 ![image-20240816162733073](assets/image-20240816162733073.png)
 
 <center>Figure 2.2. Graphical demonstrations of sparse connectivity</center>
 
-![image-20240816163117338](assets/image-20240816163117338.png)
+- **Parameter sharing** 
 
-<center>Figure 2.3Graphical depiction of how parameter sharing </center>
+  The parameter sharing used by the convolution operation means that rather than learning a separate set of parameters
+
+  for every location, we learn only one set. This does not aﬀect the runtime of forward propagation—it is still O(k× n)—but it does further reduce the storage requirements of the model to k parameters. 
+
+  ![image-20240816163117338](assets/image-20240816163117338.png)
+
+  <center>Figure 2.3Graphical depiction of how parameter sharing </center>
+
+- **Equivariant**
+
+In the case of convolution, the particular form of parameter sharing causes the layer to have a property called equivariance to translation. 
+
+$((T_a f) * g)(x) = \int f(t - a)\, g(x - t)\, dt$, $u = t - a \quad\Rightarrow\quad t = u + a,\quad dt = du$
+
+$\begin{aligned} ((T_a f) * g)(x) &= \int f(u)\, g(x - (u + a))\, du \\ &= \int f(u)\, g((x - a) - u)\, du \\ &= (f * g)(x - a) \end{aligned}$
+
+$(f * g)(x - a) = (T_a (f * g))(x)$
+
+So, $(T_a f) * g = T_a(f * g)$
+
+### 2.3. Pooling
+
+Pooling helps to make the representation approximately invariant to small translations of the input.
+
+> [!NOTE]
+>
+> Difference between invariance and equivariance
+>
+> Invariance: $T(f(x)) = f(x)$
+>
+> Equivariance: $Tf(x)= f(T(x))$
+
