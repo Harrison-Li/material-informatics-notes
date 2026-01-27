@@ -34,7 +34,11 @@ I'm currently learning **quantum mechanics** and exploring **high-throughput com
 :caption: Machine learning
 
 ML/Applied math.md
+ML/Introduction to machine learning.md
+ML/Introduction to Deep learning.md
+ML/Loss function.md
 ML/Denoising Diffusion Probabilistic Models.md
+ML/Dimensionality Reduction.md
 ML/Dimensionality Reduction.md
 ML/Introduction to Deep learning.md
 ML/Sequence model.md
@@ -63,6 +67,12 @@ ML For Materials/MACE.md
 :caption: Quantum mechanics
 Quantum Mechanics/Handwritten_version_view.md
 Quantum Mechanics/Handwritten_version.pdf
+```
+
+```{toctree}
+:hidden:
+:caption: Computation Chemistry -- papers
+docs/Computational Chemistry/Atomic Cluster Expansion (ACE).md
 ```
 
 
