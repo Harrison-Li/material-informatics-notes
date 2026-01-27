@@ -39,8 +39,6 @@ ML/Introduction to Deep learning.md
 ML/Loss function.md
 ML/Denoising Diffusion Probabilistic Models.md
 ML/Dimensionality Reduction.md
-ML/Dimensionality Reduction.md
-ML/Introduction to Deep learning.md
 ML/Sequence model.md
 ML/Transformer.md
 ML/VAE.md
