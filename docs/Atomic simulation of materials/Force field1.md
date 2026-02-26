@@ -62,7 +62,7 @@ Limitation of Morse potential: As distance goes longer, the potential reduces ex
 
 Buckingham potential (dash green line) is another effective analytical function to describe the behavior of bonds in molecules as shown by its remarkable agreement with the high-level quantum chemistry data
 $$
-E_\text{Buckingham}(x-x_0)= \underset{\text{attractive}}{Ae^{x\frac{x-x_0}{\mathcal{p}}}}- \underset{\text{repulsive}}{\frac{C}{(x-x_0)^6}}
+E_\text{Buckingham}(x-x_0)= \underset{\text{repulsive}}{Ae^{-\frac{x-x_0}{\mathcal{p}}}}- \underset{\text{attractive}}{\frac{C}{(x-x_0)^6}}
 $$
 
 - $A, \rho \text{ and } C$ are parameters that are varied to reproduce the experimental data.

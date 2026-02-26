@@ -69,8 +69,17 @@ Quantum Mechanics/Handwritten_version.pdf
 
 ```{toctree}
 :hidden:
+:caption: Molecular Dynamics
+MD/introduction.md
+MD/Forcefields for organic materials.md
+MD/Forcefields for inorganic materials.md
+MD/Molecular dynamic simulation.md
+```
+
+```{toctree}
+:hidden:
 :caption: Computation Chemistry -- papers
-docs/Computational Chemistry/Atomic Cluster Expansion (ACE).md
+Computational Chemistry/Atomic Cluster Expansion (ACE).md
 ```
 
 

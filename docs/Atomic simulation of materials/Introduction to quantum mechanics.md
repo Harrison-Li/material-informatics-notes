@@ -139,6 +139,8 @@ $$
 \frac{\partial \Psi}{\partial r} = Y \frac{\partial R(r)}{\partial r}
 $$
 and, similarly, since $R$ does not depend on the angular variables. Thus replace $\Psi$ and the differentials:
+
+
 $$
 \frac{Y}{r^2}\frac{\partial}{\partial r}(r^2\frac{\partial R}{\partial r})\, +\, \frac{R}{r^2\sin\theta}\frac{\partial}{\partial\theta}(\sin\theta\frac{\partial Y}{\partial \theta})\,+\,\frac{R}{r^2\sin^2\theta}\frac{\partial^2Y}{\partial \phi^2}\,+\, \frac{2\mu}{\bar{h}^2}(E+\frac{Ze^2}{4\pi\epsilon_0r})RY=0\\
 %
@@ -148,6 +150,8 @@ $$
 %after transformation
 \frac{1}{R}\frac{\partial}{\partial r}(r^2\frac{\partial R}{\partial r})\, +\, \frac{1}{Y\sin\theta}\frac{\partial}{\partial\theta}(\sin\theta\frac{\partial Y}{\partial \theta})\,+\,\frac{1}{Y\sin^2\theta}\frac{\partial^2Y}{\partial \phi^2}\,+\, \frac{2\mu r^2}{\bar{h}^2}(E+\frac{Ze^2}{4\pi\epsilon_0r})=0
 $$
+
+
 Now, the first term and the last term only relies on $r$, and the middle part depends on angles only. They can only balance each other for all points in space if the radial and angular terms are the same constant but with opposite signs.
 
 So, we setting $A$ as the separation constant (e.g. $\hat{R}=-\hat{Y}=A$), we can split a **radial function**:
