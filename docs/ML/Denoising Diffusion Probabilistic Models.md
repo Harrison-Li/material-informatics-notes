@@ -27,7 +27,9 @@ Where:
 >
 > **Question: $\sqrt{1-\beta_t}x_{t-1}$ is the mean value of the distribution, why not adding noise like: $x_t=x_{t−1}+\epsilon_t$  where $\epsilon_t ~\mathcal{N}(0,\beta_tI)$?**
 >
-> If we directly adding noise, the variance will be $\text{Var}(x_{t-1})+\beta_tI$. If we start with $x_0$, the after T steps, the variance of $x_t$ will be $\text{Var}(x_t)= \text{Var}(x_{t-1})+\sum_{i=1}^{T}\beta_i$, it is accumulated and grow uncontrollably. That's why we should we a scaled noise term $\sqrt{1-\beta_t}$  (since $\beta_t$ is a small positive value, typically between 0 and 1), which slightly "shrinking" the signal from the previous timestep before adding new noise.
+> The goal of diffusion is to gradually destroy structure and converge to a new gaussian distribution, so, signal $\downarrow$, noise $\uparrow$
+>
+> If we directly adding noise, the variance will be $\text{Var}(x_{t-1})+\beta_tI$. If we start with $x_0$, the after T steps, the variance of $x_t$ will be $\text{Var}(x_t)= \text{Var}(x_{t-1})+\sum_{i=1}^{T}\beta_i$, it is accumulated and grow uncontrollably while the mean value is stay at $x_0$, it's a random walk for distribution. That's why we should we a scaled noise term $\sqrt{1-\beta_t}$  (since $\beta_t$ is a small positive value, typically between 0 and 1), which slightly "shrinking" the signal from the previous timestep before adding new noise.
 
 
 

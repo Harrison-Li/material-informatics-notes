@@ -193,9 +193,96 @@ Laplacian: $\nabla^2_rU=\nabla\cdot\nabla_rU=-\sum_i^N(\frac{\partial F_{ix}}{\p
 
 Temperature: $kT=\frac{|\nabla_r U|^2}{\nabla_r^2 U}=-\frac{\sum_i^N \hat{F_i}^2}{\sum_i^N(\frac{\partial F_{ix}}{\partial r_{ix}}+...+\frac{\partial F_{iy}}{\partial r_{iy}})}$
 
-## 5. Truncating the Potential and Ewald Summation
+## 5. Types of Thermostats
 
-### 5.1. Truncating the Potential
+In canonical ensemble, the $N, V, T$ are fixed. The temperature of the system can be connected to the kinetic energy by the momentum temperature:
+$$
+KT =\frac{|\nabla_p K|^2}{\nabla_p^2 K} = \frac{1}{Nd}\sum_i^N\frac{p_i^2}{m}=\frac{2}{Nd}\langle E_K\rangle\\
+\downarrow \text{when d=3, in Cartesian coordinate}\\
+\frac{3}{2}NKT = \langle E_K\rangle
+$$
+
+
+Although the temperature and the average kinetic energy are fixed, the instantaneous kinetic energy fluctuates and with it the velocities of the particles. The instantaneous kinetic energy is often used to define the instantaneous temperature $T_\text{in}$ by:
+$$
+k_B T_{\mathrm{in}} = {2\over 3N} E_{\mathrm{kin}}
+$$
+But in <u>NVE micro-canonical ensemble</u>, the temperature is characterized by $\frac{1}{T}=\partial S/\partial E$, there is no connection between kinetic energy and temperature.
+
+Because the temperature fluctuates in the finite systems as we introduced above, so the goal of thermostat is to ensure the time average of $T(t)$ is matched with target temperature $T_\text{target}$ 
+
+### 5.1. Velocity Rescaling (Simple but Flawed)
+
+The simplest way to control temperature is to periodically multiply all particle velocities by a scaling factor.
+$$
+\mathbf{v}_i^{new} = \lambda \mathbf{v}_i^{old} \quad \text{where} \quad \lambda = \sqrt{\frac{T_\text{target}}{T(t)}}
+$$
+It's computationally cheap and brings the system exactly to the target temperature. However, it does not follow the natural kinetic energy fluctuations of the canonical ensemble, leading to incorrect thermodynamic properties. So, it's generally only used in equilibrium conditions.
+
+And the typical example is Berendsen and Andersen Thermostat.
+
+#### 5.1.2 Berendsen Thermostat
+
+The Berendsen thermostat weakly couples the system to an external heat bath. It forces the temperature to exponentially decay towards the target value.
+$$
+\frac{dT}{dt} = \frac{T_{target} - T(t)}{\tau}
+$$
+
+- $\tau$: The coupling time constant (relaxation time). A small $\tau$ means tight coupling (faster temperature adjustment), while a large $\tau$ means weak coupling.
+
+$$
+\lambda = \sqrt{1+\frac{\Delta t}{\tau}(\frac{T_\text{target}}{T(t)}-1)}
+$$
+
+
+
+### 5.2. Stochastic Thermostat
+
+#### 5.2.1. Andersen Thermostat
+
+The Andersen thermostat introduces stochastic (random) collisions with a virtual heat bath. Periodically, a particle is selected at random, and its velocity is reassigned from a Maxwell-Boltzmann distribution corresponding to the target temperature.
+
+The probability of a particle undergoing a collision in a discrete time step $\Delta t$ is governed by a collision frequency:
+$$
+P(\text{collison})=\nu \Delta t
+$$
+And the Continuous Waiting Time Distribution describes the waiting time between consecutive collisions for a single particle.
+$$
+p(t;\nu) = \nu e^{-\nu t}
+$$
+
+#### 5.2.2. Langevin Thermostat
+
+The equation for Langevin dynamics:
+$$
+m\frac{d^2r}{dt^2}=-\nabla_rU(r_1,...,r_N)-\gamma mv_i+R_i
+$$
+
+- $\nabla U$ is the conservative force.
+- $\gamma$: The collision frequency or friction coefficient.
+- $v_i$: Velocity of the particle.
+- $R_i$: The random (Gaussian) force.
+
+**Velocity-Verlet algorithm for Langevin thermostats**
+$$
+\begin{align}
+\mathbf{v}_i(t + {\delta t\over 2}) &= \mathbf{v}_i(t) + {\delta t \over 2m} \left[
+                                           \mathbf{F}_i - \gamma m \mathbf{v}_i
+                                       \right] + \mathbf{R}_i
+\end{align}
+$$
+
+#### 5.2.3. Nosé-Hoover Thermostat (Extended Lagrangian Method)
+
+In Nosé-Hoover’s approach, an additional “agent” is introduced into the system to “check” whether the instantaneous kinetic energy is higher or lower than the desired temperature and then scales the velocities accordingly, effectively acting as a heat reservoir.
+
+
+
+
+
+## 6. Truncating the Potential and Ewald Summation
+
+### 6.1. Truncating the Potential
 
 Any potential truncation introduces discontinuity, near cutoff $(r<r_\text{cutoff})$ the potential is continuous, at $r_\text{cutoff}$, $U$ is 0. Such phenomenon introduces infinite force near $r_\text{cutoff}$
 
@@ -218,7 +305,7 @@ u(r) - u(r_c) - \frac{du}{dr}(r-r_c) & r \leq r_c \\
 \end{cases}
 $$
 
-### 5.2. Ewald Summation
+### 6.2. Ewald Summation
 
 If we need to calculate the total electrostatic energy of a periodic system of point charges, the direct approach is to sum the coulomb interactions for pair-wise charges. However, recall that bulk system are usually simulated with periodic boundary conditions by cutoff. Due to minimum image convention, it only interact with nearest image. 
 $$
@@ -230,7 +317,7 @@ The prime (′) indicates that we do not include the interaction of a charge wit
 
 Due to the slow convergence of $\frac{1}{r}$, and the number of interacting particles in a 3D space grows as $r^2$. The potential will increase with $U_\text{total}\propto \int_0^\infty rdr\rightarrow \infty$ (for single type shell charges), and in real crystals they are conditionally converge. 
 
-So, to deal with slow convergence, a **short-range** part calculated in real space, and a **long-range** part calculated in reciprocal (Fourier) space.
+So, to deal with slow convergence, Ewald propose to calculate the potential splitter into a **short-range** part calculated in real space, and a **long-range** part calculated in reciprocal (Fourier) space.
 $$
 U = U_\text{sr} + U_\text{lr} = \frac{f(\lambda(r))}{r} + \frac{1-f(\lambda(r))}{r}\\
 =\frac{\text{erfc}(r)}{r}+\frac{1- \text{erfc}}{r}
@@ -263,12 +350,13 @@ $$
     \operatorname{erf}(r) =  \frac{2}{\sqrt\pi} \int_0^r e^{-t^2} \,\mathrm{d}t;
 $$
 
+![image-20260301163256949](assets/screen.png)
 
 **Real space summation**
 
 Now we can calculate the short range potential caused by such smooth charge distribution:
 $$
-U_{sr} = \sum_{i=1}^N\sum_{j=1}^N\sum_L^\prime q_iq_j\frac{\operatorname{efrc}(\alpha|r_{ij}+L|)}{|r_{ij}+L|}
+U_{sr} = \sum_{i=1}^N\sum_{j=1}^N\sum_L^\prime q_iq_j\frac{\operatorname{erfc}(\alpha|r_{ij}+L|)}{|r_{ij}+L|}
 $$
 
 
@@ -278,11 +366,108 @@ Due to the periodicity of crystals, the particles interact with compensated clou
 
 
 $$
-U_{lr}= \frac{1}{2V}\sum_{k\neq 0}\frac{4\pi}{k^2}e^{-k^2/4\alpha^2}|\sum_{j=1}^Nq_je^{-ik\cdot _jr}|^2
+U_{lr}= \frac{1}{2V}\sum_{k\neq 0}\frac{4\pi}{k^2}e^{-k^2/4\alpha^2}|\sum_{j=1}^Nq_je^{-ik\cdot r_j}|^2
 $$
+> [!TIP]
+>
+> Fourier transformation of Gaussian, for $1D$ Gaussian $g(x)=e^{-\alpha x^2}$:
+> $$
+> \mathcal{F}(g(k))=A\int_{-\infty}^{+\infty} e^{-\alpha x^2}e^{-ikx}dx=Ae^{-k^2/4\alpha}\int_{-\infty}^{+\infty} e^{-\alpha(x+\frac{ik}{2\alpha})^2}dx\\
+> =A\sqrt{\frac{\pi}{\alpha}}e^{-k^2/4\alpha}\Leftarrow\int_{-\infty}^{+\infty}e^{-\alpha(z+b)^2}dz=\sqrt{\frac{\pi}{\alpha}}\\
+> =A\sqrt{\frac{\pi}{\alpha}}^ne^{-(k_1^2+...+k_n^2)/4\alpha}
+> $$
+>
+
+Here the normalization factor $A=\frac{1}{\sqrt{\Omega}}$, $\Omega$ is the volume of the $n$ dimension space. Proof bellow:
+$$
+f(k) = A\int_\Omega f(r)e^{-ikr}d^nr\\
+f(r) = A\sum_k f(k)e^{ikr}
+=A^2\sum_k\int_{\mathbb{R}^n}f(r)e^{ikr-ik^\prime r}d^nr\\
+=f(r)A^2\Omega\delta_{k,k^\prime}\Rightarrow A^2\Omega=1\rightarrow A=\frac{1}{\sqrt{\Omega}}
+$$
+
+
+The let's first get the distribution of the compensation smooth distribution.
+$$
+\rho_\text{compensate}(r) =  -\rho_\text{screen}(r+L) = \sum_L\sum_{i=1}q_i(\frac{\alpha}{\sqrt{\pi}})^3e^{-\alpha^2|r-r_i+L|^2}
+$$
+Since $\rho_\text{compensate}$ is perfectly periodic, calculating them in real space is hard. So, we use above **Fourier transformation** to convert it into reciprocal space.
+$$
+\rho_\text{compensate}(k)
+=\int\rho(r)e^{ikr}d\mathbf{r}=\frac{1}{\sqrt{\Omega}}\int q_i(\frac{\alpha}{\sqrt{\pi}})^3 \sum_i\sum_Le^{-\alpha^2|\mathbf{r}-r_i+L|^2}e^{ik\mathbf{r}}d\mathbf{r}\\
+=\frac{1}{\sqrt{\Omega}}\sum_L\sum_{i=1}q_ie^{-\mathbf{k}^2/4\alpha^2}\cdot e^{i\mathbf{k}r_i}\cdot e^{i\mathbf{k}L}\\
+=\sqrt{\frac{N}{V}}\sum_iq_ie^{-\mathbf{k}^2/4\alpha^2}\cdot e^{i\mathbf{k}r_i}
+$$
+
+- Recall that $e^{ikL}=1$ and $\sum_Le^{ikL}=N\delta_{k,L}$, L is lattice vector.
+- $\delta_{k,G} = 1$ if $k_j$ and $L_j$ share same index. And orthogonal if share different index $j$
+- $N$ and $V$ is the number and volume of unit cells, respectively.
+- $\Omega$ is volume of the periodic materials: $\Omega=NV$.
+
+
+
+The charge and electrostatic potential are related by Poisson’s equation in real space
+
+
+$$
+\phi(r)=\frac{q}{r}\rightarrow E(r)=\frac{q}{r^2}\\
+\oint EdV\overset{\text{for sphere}}{\rightarrow}\oint EdA=4\pi Q\\
+\phi(r)=\nabla E(r)=4\pi\rho(r)
+$$
+Pay attention, here we use **Gaussian (cgs) units** instead of **SI** units ($\AA$), if we use SI units $\phi(r)=\frac{\rho(r)}{\epsilon_0}$
+
+Now, we substitute the $\rho$ with the electrostatic potential:
+$$
+-k^2\phi(k) = 4\pi\rho(k)
+$$
+
+$$
+\phi_\text{compensate}(k)=\sqrt{\frac{N}{V}}\sum_iq_i\frac{4\pi}{k^2}e^{-k^2/4\alpha^2}\cdot e^{ikr_i}
+$$
+
+
+And we get the potential:
+$$
+U_{lr}(r)=\sum_m\sum_r\frac{1}{2}\phi(r)q_m\\
+\Downarrow \text{Fourier transformation}\\
+U_{lr}(k)=\sum_m\sum_k\frac{1}{2V}\phi(k)q_me^{ikr_m}
+$$
+
+$$
+U_{lr}(k)=\sum_k\frac{1}{2V}(\frac{4\pi}{k^2})(\sqrt{\frac{N}{\Omega}}\sum_i^N\sum_j^Nq_iq_je^{-k^2/4\alpha^2}\cdot e^{ik(r_i-r_j)})\\
+=\frac{1}{2V}\sum_{k\neq0}\frac{4\pi}{k^2}e^{-k^2/4\alpha^2}\sum_i^N\sum_j^Nq_iq_j\cdot e^{ik(r_i-r_j)}
+$$
+
+
+
 **Self correction term**
 
 This is a constant correction term applied to remove the interaction of a charge's compensating cloud with the charge itself, which was inherently included in the reciprocal sum.
 $$
 U_\text{self} = -\frac{\alpha}{\sqrt{\pi}}\sum_iq_i^2
 $$
+
+
+
+
+
+
+
+
+## Radial distribution function (RDF)
+
+$$
+g(r)=\frac{\rho(r)dr}{\rho^{id}(r)dr}\rightarrow
+\rho^{id}(r)=\frac{N}{V}dr
+$$
+
+- $g(r)=1$ as $r>r_\text{cutoff}$, meaning the structure becomes uniform at long distances.
+- $g(r)=0$ as $r=0$ due the core repulsion between atoms.
+
+
+
+
+
+[1]: http://staff.ustc.edu.cn/~zqj/posts/Ewald-Summation	"Ewald Summation post by Qijing Zheng"
+[2]: http://staff.ustc.edu.cn/~zqj/posts/NVT-MD/	"Molecular Dynamics at Constant Temperature"
+

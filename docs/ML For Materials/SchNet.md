@@ -64,7 +64,7 @@ $$
 
 In order to satisfy the requirements for modeling molecular energies, they restrict their filters for the cfconv layers to be rotationally invariant. The rotational invariance is obtained by using interatomic distances as input for the filter network.
 $$
-d_{ij}=||r_i-r_j||
+d_{ij}=\lVert r_i-r_j\rVert
 $$
 
 > [!NOTE]
@@ -75,7 +75,7 @@ $$
 
 The they avoid this by expanding the distance with radial basis functions:
 $$
-e_k(r_i-r_j) = \exp{(\gamma\norm{d_{ij}-\mu_k}^2)}
+e_k(r_i-r_j) = \exp{(\gamma\lVert d_{ij}-\mu_k}\rVert^2)
 $$
 Due to this **additional non-linearity**, the initial filters are less correlated leading to a faster training procedure. Choosing fewer centers corresponds to reducing the resolution of the filter, while restricting the range of the centers corresponds to the filter size in a usual convolutional layer. 
 
@@ -87,5 +87,5 @@ $$
 $$
 And loss function is (their task becomes multi-task learning):
 $$
-\mathcal{L}(\hat{E}, (F_1,...,F_n)) = \rho\norm{\hat{E}-E}^2+\frac{1}{n}\sum^n_{i=0}\norm{F_i-(-\frac{\partial \hat{E}}{\partial r_i})}^2
+\mathcal{L}(\hat{E}, (F_1,...,F_n)) = \rho\lVert\hat{E}-E\rVert^2+\frac{1}{n}\sum^n_{i=0}\lVert F_i-(-\frac{\partial \hat{E}}{\partial r_i})\rVert^2
 $$
