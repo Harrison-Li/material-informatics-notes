@@ -274,8 +274,56 @@ $$
 
 #### 5.2.3. Nosé-Hoover Thermostat (Extended Lagrangian Method)
 
-In Nosé-Hoover’s approach, an additional “agent” is introduced into the system to “check” whether the instantaneous kinetic energy is higher or lower than the desired temperature and then scales the velocities accordingly, effectively acting as a heat reservoir.
+In Nosé-Hoover’s approach, an additional “agent” is introduced into the system to “check” whether the instantaneous kinetic energy is higher or lower than the desired temperature and then scales the velocities accordingly, effectively acting as a heat reservoir. It introduces a new degree of freedom, $s$ representing a reservoir.
 
+**The original Nosé Thermostat
+$$
+\mathcal{L}_\text{Nose}=\sum_{i=1}^N\frac{m}{2}\dot{r'}^2s^2-V(r)+\frac{Q}{2}\dot{s'}^2-gK_BT\ln s'
+$$
+
+- $s$: The extended, dimensionless variable representing the artificial heat bath.
+
+- $\dot{r}$: The time derivative of the position vector of particle $i$ (virtual velocity).
+- $\dot{s}$ The time derivative of the heat bath variable $s$
+- $g$ is the number of independent degrees of freedom in the physical system. For $N$ particles in 3D space with fixed total momentum, $g=3N−3$.
+- $Q$ is the thermal inertia or "effective mass", which determines the time scale on which the extended variable acts. 
+
+However, the Nosé Lagrangian perfectly generates the canonical ensemble, it operates in "virtual time" because the time step scales with the fluctuating variable $s$, the extended method aims to return the equations to "real time" and real momenta.
+$$
+\begin{align*}
+\dot{r_i}&=\frac{dr}{dt}=\frac{p_i}{m}\\
+\dot{p_i}&=\frac{dp_i}{dt}=F_i-\zeta p_i\\
+\zeta &= \frac{\dot{s}}{s}\\
+\frac{d\zeta}{dt} &= \frac{1}{Q} \left( \sum_{i=1}^{N} \frac{|\mathbf{p}_i|^2}{m_i} - N_f k_B T_{target} \right)
+\end{align*}
+$$
+
+- If the system is too hot ($T(t) > T_{target}$), $\frac{d\zeta}{dt}$ is positive, $\zeta$ grows, increasing friction and **cooling** the system.
+- If the system is too cold ($T(t) < T_{target}$), $\frac{d\zeta}{dt}$ is negative, $\zeta$ becomes negative (acting as an accelerant), and **heats** the system.
+
+
+$$
+H_{NH} = \sum_{i=1}^{N} \frac{|\mathbf{p}_i|^2}{2m_i} + U(\mathbf{r}) + \frac{1}{2} Q \zeta^2 + N_f k_B T_{target} \int_0^t \zeta(t') dt'
+$$
+
+- $s$ can be treated  as a scaling factor of the time step
+
+  
+
+So, the relation between real time and virtual times is:
+$$
+\tau = \int_0^{\tau'} \frac{1}{s(t)}dt' = \frac{1}{s}\tau'
+$$
+The transformation between the real variables $(\mathbf{r})$ and virtual variables $(\mathbf{r'})$ is:
+$$
+\begin{align*}
+ \mathbf{r} &= \mathbf{r'}      \\[6pt]
+ \mathbf{p} &= \mathbf{p'}/s   \\[6pt]
+          s &= s'               \\[6pt]
+        p_s &=   p_s'/s      \\[6pt]
+\mathrm{d}t &= \mathrm{d}t'/s \label{eq:r2v_dt} \\[6pt]
+\end{align*}
+$$
 
 
 

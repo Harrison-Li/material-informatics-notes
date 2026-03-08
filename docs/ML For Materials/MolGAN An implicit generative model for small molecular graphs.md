@@ -96,7 +96,7 @@ Where:
 - $\sigma(x)=1/(1+exp(-x))\text{ is the logistic sigmoid function.}$
 - $i\text{ and }j$ are MLPs with a linear output layer.
 - $\odot$ denotes element-wise multiplication.
-- $h_{\mathcal{G}}$ is a vector representation of graph $\mathcal{G}$ and it is further processed by an MLP to produce a graph level scalar output $\in(-\infin,+\infin)$ for the discriminator and $\in (0,1)$ for the reward network.
+- $h_{\mathcal{G}}$ is a vector representation of graph $\mathcal{G}$ and it is further processed by an MLP to produce a graph level scalar output $\in(-\infty,+\infty)$ for the discriminator and $\in (0,1)$ for the reward network.
 
 ## Additional information
 

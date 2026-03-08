@@ -130,14 +130,17 @@ In other words, each term in the scoring function depends only on how a cluster 
 
 
  Let $G_iG_i$ be the subgraph resulting from a particular merging of cluster $C_i$ in the tree with its neighbors $C_j$, $j\in N_\mathcal{T}(i)$. We score $Gi$ as a candidate subgraph by first deriving a vector representation $h_{G_i}$ and then using $f_i^a  (G_i) = h_{G_i}·z_G$ as the subgraph score. To this end, let $u,v$ specify atoms in the candidate subgraph $G_{i}$ and let $\alpha_v = i $ if $v \in C_i$ and $\alpha_v = j$ if $v \in C_j \setminus  C_i.$ The indices αv are used to mark the position of the atoms in the junction tree, and to retrieve messages $m_{i,j}$ summarizing the sub- tree under $i$ along the edge $(i,j)$ obtained by running the tree encoding algorithm. The neural messages pertaining to the atoms and bonds in subgraph $G_{i}$ are obtained and aggregated into $h_{G_i}$ , similarly to the encoding step, but with different (learned) parameters:
-$$
-\mu_{uv}^t=\tau(\mathbf{W}_1^a\mathbf{x}_u+\mathbf{W}_2^a\mathbf{x}_{uv}+\mathbf{W}_3^a\widetilde{\mu}_{uv}^{(t-1)})\\
 
+$$
+\mu_{uv}^t=\tau(\mathbf{W}_1^a\mathbf{x}_u+\mathbf{W}_2^a\mathbf{x}_{uv}+\mathbf{W}_3^a\widetilde{\mu}_{uv}^{(t-1)})
+$$
+$$
 \widetilde{\mu}_{uv}^{(t-1)}=\left\{\begin{aligned}
 &\sum_{w\in N(u)\setminus v}\mu_{wu}^{(t-1)}\qquad &\alpha_u= \alpha_v\\
 &\mathbf{\hat{m}}_{\alpha_u,\alpha_v}+\sum_{w\in N(u)\setminus v}\mu_{wu}^{(t-1)}\quad &\alpha_u\ne \alpha_v
 \end{aligned}\right.
 $$
+
 The major difference from Eq. (1) is that we augment the model with tree messages $\hat{m}_{\alpha_u ,\alpha_v}$ derived by running the tree encoder over the predicted tree $\mathcal{T}$. $\hat{m}_{\alpha_u ,\alpha_v}$ provides a tree dependent positional context for bond $(u,v)$ 
 
 

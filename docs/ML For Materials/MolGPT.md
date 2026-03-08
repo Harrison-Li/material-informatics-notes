@@ -41,7 +41,7 @@ Model is trained for 10 epochs using the Adam optimizer with a learning rate of 
 - **Uniqueness:** The fraction of valid generated molecules that are unique.
 - **Novelty: **The fraction of valid unique generated molecules that are not in the training set. 
 - **Internal Diversity ($\mathbf{IntDiV_p}$ ):** Measures the diversity of the generated molecules.
-- **Freshet ChemNet Distance(FCD): **Calculated using the features of the generated molecules and the features of molecules in the data set.
+- **Freshet ChemNet Distance(FCD):** Calculated using the features of the generated molecules and the features of molecules in the data set.
 - **KL Divergence:** KL divergence between two distributions P and Q for any given property is a measure of how well Q approximates P
 
 ## RESULTS AND DISCUSSION
