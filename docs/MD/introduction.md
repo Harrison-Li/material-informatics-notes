@@ -28,6 +28,8 @@ e.g. for an  materials with 1000 atoms, to simulate the 100 ns of real-world mot
 ### Lennard Jones potential
 
 <img src="assets/LJ_potential.png" alt="Figure_1" style="zoom: 67%;" />
+
+
 $$
 \begin{aligned}
 V(r)&= \frac{B}{r^{12}}-\frac{A}{r^6}\\
@@ -40,7 +42,7 @@ $$
 
 ### Morse potential
 
-![Figure_1](assets/morse_potential.png)
+<img src="assets/morse_potential.png" alt="Figure_1" style="zoom:67%;" />
 $$
 \begin{aligned}
 V(r) &= D[1-e^{(-\alpha \cdot (r - r_0))}]^2 - D \\
