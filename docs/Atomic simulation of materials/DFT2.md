@@ -27,13 +27,16 @@ $H(\vec{x_1},...,\vec{x_N})=\frac{1}{\sqrt{N}}\begin{vmatrix}\theta_1(\vec{x_1})
 
 
 $$
+\begin{align*}
 &E_\text{KS}[\rho] = \underset{\text{non interacting kinetic}}{T_s[\rho]} + \underset{\text{external potential}}{\int d\vec{F}V_{ne}(\vec{r})\rho(\vec{r})}+ \underset{\text{Classical couomb interaction}}{E_\text{Hartree}[\rho]} + \underset{\text{exchange-correlation}}{E_xc[\rho]}\\
 &= -\frac{1}{2} \sum_i^N \int d\mathbf{r}_1\, |\nabla \theta_i(\mathbf{r}_1, \sigma)|^2 - \sum_i^N \int \sum_A^M \frac{Z_A}{|\mathbf{r}_1 - \mathbf{R}_A|} |\theta_i(\mathbf{r}_1)|^2\\
 &\quad + \frac{1}{2} \sum_i^N \sum_j^N \int \! \int d\mathbf{r}_1 d\mathbf{r}_2\,
 |\theta_i(\mathbf{r}_1)|^2 \frac{1}{|\mathbf{r}_1 - \mathbf{r}_2|} 
 |\theta_j(\mathbf{r}_2)|^2
 + \underset{\text{unknown}}{E_{\mathrm{xc}}[\rho]}
+\end{align*}
 $$
+
 Again, the unknown term is $E_{\mathrm{xc}}[\rho]$. Similarly as what we done in previous Hartree-Fock approximation session, we applied variational principle to make the orbitals $\theta_i(r)$ fulfill in order to minimize this energy.
 
 Recall that, variational principle $\theta_i(r)\rightarrow \delta \theta_i(r), \delta \text{ is the variation factor}$ 
@@ -56,8 +59,7 @@ $$
 <img src="assets/image-20251014155356535.png" alt="image-20251014155356535" style="zoom:50%;" />
 
 ## Finding the Unknown Exchange-Correlation Functionals
-
-\[
+$$
 \left\{
 \begin{aligned}
 &\text{1. Chemist (empirical): get }E_\text{xc}\text{ by comparing to experiments}\\
@@ -67,7 +69,7 @@ $$
 &\rightarrow\text{ limited known features/constraints}
 \end{aligned}
 \right.
-\]
+$$
 
 **Local Density Approximation (LDA)**
 

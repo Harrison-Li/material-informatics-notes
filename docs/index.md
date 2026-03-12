@@ -8,6 +8,7 @@ My notes from studying **Machine Learning** with a **materials science** backgro
 **🌐 [View the online book here](https://harrison-li.github.io/Computational-materials-notes/)**
 
 This repository is published as an interactive web-based book using Jupyter Book, with full support for:
+
 - ✨ Properly rendered LaTeX math equations
 - 🔍 Full-text search
 - 📱 Mobile-friendly responsive design
@@ -43,6 +44,7 @@ ML/Sequence model.md
 ML/Transformer.md
 ML/VAE.md
 ML/Variational Inference with Normalizing Flows.md
+ML/Reinforcement Learning.md
 ML/Transfer learning.md
 ```
 
@@ -83,7 +85,6 @@ MD/Monte Carlo.md
 Computational Chemistry/Atomic Cluster Expansion (ACE).md
 ```
 
-
 ```{toctree}
 :hidden:
 :caption: Atomic simulation
@@ -116,12 +117,3 @@ Agent/Langgraph.md
 Agent/Langgraph.md
 ```
 
-
-[commonmark]: https://commonmark.org/
-[github-ci]: https://github.com/Harrison-Li/Computational-materials-notes/workflows/continuous-integration/badge.svg?branch=main
-[github-link]: https://github.com/Harrison-Li/Computational-materials-notes
-[github-badge]: https://img.shields.io/github/stars/Harrison-Li/Computational-materials-notes?label=github
-[site-link]: https://harrison-li.github.io/Computational-materials-notes/
-[markdown-it-py]: https://markdown-it-py.readthedocs.io/
-[markdown-it]: https://markdown-it.github.io/
-[rst-to-myst]: https://rst-to-myst.readthedocs.io

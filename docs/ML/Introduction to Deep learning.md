@@ -50,7 +50,7 @@ $\left\{\begin{aligned}&\text{training set}\rightarrow\text{It is used to adjust
 
 We go through the training data multiple times. Each pass through the data is called an <u>epoch.</u>
 
-### 1.2. Cross-entropy Loss Functions for Neural Nets
+### 1.2. Loss Functions for Neural Nets
 
 <img src="assets/image-20240813210237693.png" alt="image-20240813210237693" style="zoom:67%;" />
 

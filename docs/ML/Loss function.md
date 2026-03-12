@@ -21,5 +21,5 @@ $$
 This criterion computes the cross entropy loss between input logits and target.
 
 $$
-H(p,q)=-\sum_{x\in\mathcal{X}}p(x)\log{q(x)}
+H(p,q)=-\sum_{x\in\mathcal{X}}p(x)\log{q(x)} = H(P)+D_{KL}(P||Q)
 $$

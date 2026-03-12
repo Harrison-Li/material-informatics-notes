@@ -330,6 +330,10 @@ $$D_{KL}(P \parallel Q) = \mathbb{E}_{X \sim P} \left[ \log \frac{P(x)}{Q(x)} \r
 
 The KL divergence has many useful properties, most notably being non-negative. The KL divergence is 0 if and only if P and Q are the same distribution in the case of discrete variables, or equal “almost everywhere” in the case of continuous variables. 
 
+Difference between KL divergence between $D(P||Q)$ and $D(Q||P)$
+
+![image-20260312151225386](assets/KL.png)
+
 # 5. Numerical Computation
 
 ## 5.1. Overflow and Underflow
