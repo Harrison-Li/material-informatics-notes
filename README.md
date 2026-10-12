@@ -5,20 +5,10 @@ My notes from studying **Machine Learning** with a **materials science** backgro
 
 ## 📖 Read as a Web Book
 
-**🌐 [View the online book here](https://harrison-li.github.io/Computational-materials-notes/)**
+**🌐 [View the online book here](https://github.com/Harrison-Li/material-informatics-notes)**
 
 This repository is published as an interactive web-based book using Jupyter Book, with full support for:
-- ✨ Properly rendered LaTeX math equations
-- 🔍 Full-text search
-- 📱 Mobile-friendly responsive design
-- 🎨 Clean, readable interface
-
-> [!TIP]
-> The web version provides the best reading experience with proper math rendering and navigation!
-
 ## 🔄 Incoming Updates
-
-Recently, I have learned Quantum mechanics and Atomic simulation like DFT, etc. I will update it soon. Also, hoping to update the some fanscinating papers and some knowlege about the intersection between Computational Chemistry and AI.
 
 📌 I’ll continue to publish notes as I make progress.  
 

@@ -59,6 +59,7 @@ r_t &=r_\phi(q,o_t)-\beta\log \frac{\pi_\theta(o_t|q,o<t)}{\pi_{\theta_\text{ref
 $$
 
 - $r_\phi$ is the reward model
+- $\pi_\theta$ is current policy model.
 - $\pi_\text{ref}$ is the reference model, which is usually the initial supervised fine-tuning (SFT) model
 - $\beta$ is the coefficient of the KL penalty
 
