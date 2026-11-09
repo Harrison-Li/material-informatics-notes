@@ -38,6 +38,9 @@ ML/Loss function.md
 ML/Activation function.md
 ML/E(n) Equivariant Graph Neural Networks.md
 ML/Denoising Diffusion Probabilistic Models.md
+ML/Bayesian Optimization with Sparse Axis-Aligned Subspaces.md
+ML/D3PM.md
+ML/DLM.md
 ML/Dimensionality Reduction.md
 ML/Sequence model.md
 ML/Transformer.md
@@ -56,6 +59,7 @@ ML For Materials/Material informatics.md
 ML For Materials/MolGAN An implicit generative model for small molecular graphs.md
 ML For Materials/MolGPT.md
 ML For Materials/SchNet.md
+ML For Materials/PAiNN.md
 ML For Materials/Deep tensor neural network (DTNN).md
 ML For Materials/GemNet Universal Directional Graph Neural Networks for Molecules.md
 ML For Materials/MACE.md
@@ -82,6 +86,9 @@ MD/Monte Carlo.md
 :hidden:
 :caption: Computation Chemistry -- papers
 Computational Chemistry/Atomic Cluster Expansion (ACE).md
+Computational Chemistry/Boltzmann generators.md
+Computational Chemistry/Transition state.md
+Computational Chemistry/Long Range MLIP.md
 ```
 
 ```{toctree}

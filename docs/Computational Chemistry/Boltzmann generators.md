@@ -10,7 +10,7 @@ The main approach is to start with one configuration, and apply tiny changes to 
 
 The Boltzmann generators try to directly provide unbiased, one shot samples from its equilibrium state.
 
-<img src="/Users/harrison-li/Desktop/material-informatics-notes/docs/Computational Chemistry/assets/boltzmann generators.png" alt="image-20260826135550285" style="zoom:67%;" />
+<img src="/Users/harrison-li/Desktop/material-informatics-notes/docs/Computational Chemistry/assets/boltzmann_generators.png" alt="image-20260826135550285" style="zoom:67%;" />
 
 
 
